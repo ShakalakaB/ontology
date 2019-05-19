@@ -1,0 +1,60 @@
+
+#nav{
+    /*display:flex;
+    justify-content:space-between;*/
+    max-width:1200px;
+    padding:0;
+    box-sizing: border-box;
+    margin-right:auto;
+    margin-left:auto;
+    background-color: green;
+    border:2px solid black;
+    #logo{
+        height:24px;
+        border:2px solid black;
+    }
+    #toggle{
+        border:2px solid white;
+    }
+    #navLinks{
+        position: absolute;
+        height:2.5em;
+        right:0;
+        //border:2px solid white;
+        .dropdown:hover>.dropMenu{
+            display:block;
+        }
+        .dropText{
+            color:black;
+            background-color: transparent;
+        }
+        .dropText::after{display:none}
+        .dropdown:hover .navIcon{transform:rotate(-180deg)}
+        .navIcon{
+            display: inline-block;
+            transition:0.5s all;
+        }
+        #test1{
+            background-color: transparent;
+            color:black;
+        }
+        #test1::after{
+            display:none;
+            //border:2px solid black;
+        }
+        #test2:hover>#test3{
+            display: block;
+        }
+        /*#test4{
+            border:2px solid white;
+            transform: rotate(-180deg);
+        }*/
+        #test2:hover #test4{
+            transform: rotate(-180deg);
+        }
+        #test4{
+            display: inline-block;
+            transition:0.5s all;
+        }
+    }
+}
