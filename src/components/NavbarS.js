@@ -4,6 +4,9 @@ import {Navbar,Nav,NavItem,Dropdown} from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '../fontsawesome';
 import {navTogBackground,breakpoint,navBackground,navContent} from '../constants';
+
+let lastIconId=0;
+let sameIcon=true;
 class NavbarS extends React.Component{
     constructor(props){
         super(props);
@@ -22,6 +25,7 @@ class NavbarS extends React.Component{
         this.navToggleClick=this.navToggleClick.bind(this);
         this.viewWidth = this.viewWidth.bind(this);
         this.textToggle=this.textToggle.bind(this);
+        this.test=this.test.bind(this);
     }
     componentDidMount() {
         this.viewWidth();
@@ -61,6 +65,10 @@ class NavbarS extends React.Component{
         });
     }
     viewWidth() {
+        if (window.innerWidth>=breakpoint){
+            let icon=document.getElementsByClassName('navIcon')[0];
+            icon.style.transform="rotate(0deg)";
+        }
         this.setState({
             textStyle:{backgroundColor:navBackground,boxShadow:`none`,borderBottom:`1px solid rgba(255,255,255,0.3)`}
         });
@@ -76,25 +84,46 @@ class NavbarS extends React.Component{
     }
     textToggle(event){
         if (window.innerWidth<breakpoint){
-            /*let style=(this.state.textToggle)?(
-                {transition:`all o.1s`}
-            ):(
-                {transform:`rotate(180deg)`,transition:`all 0.5s`}
-            );*/
             this.setState({
-                textStyle:{backgroundColor:navBackground,boxShadow:`none`,borderBottom:`1px solid rgba(255,255,255,0.3)`},
-                //textToggle:!this.state.textToggle,
-                //textIconSty:style
+                textStyle:{backgroundColor:navBackground,boxShadow:`none`,borderBottom:`1px solid rgba(255,255,255,0.3)`}
             });
+        }
+    }
+    test(event){
+        if (window.innerWidth<breakpoint){
+            let iconId='icon'+(event.currentTarget.id).match(/\d+/)[0];
+            let icon=document.getElementById(iconId);
+            let lastIcon=document.getElementById(lastIconId);
+            if (iconId==lastIconId){
+                if(sameIcon){
+                    icon.style.transform="rotate(0deg)";
+                    icon.style.transition="all 0.1s";
+                    sameIcon=false;
+                }else{
+                    icon.style.transform="rotate(180deg)";
+                    icon.style.transition="all 0.5s";
+                    sameIcon=true;
+                }
+            }else if (lastIconId!=0){
+                icon.style.transform="rotate(180deg)";
+                icon.style.transition="all 0.5s";
+                lastIcon.style.transform="rotate(0deg)";
+                lastIcon.style.transition="all 0.1s";
+                sameIcon=true;
+            }else if(lastIconId==0){
+                icon.style.transform="rotate(180deg)";
+                icon.style.transition="all 0.5s";
+            }
+            lastIconId=iconId;
         }
     }
     render(){
         let navItems=(this.state.langCho)?
             (navContent['chinese'].map(e=>{
                 return (
-                <Dropdown key={'dropdown'+e['id']} id={'dropdown'+e['id']} onToggle={this.textToggle} className="dropdown" as={NavItem}>
+                <Dropdown key={'dropdown'+e['id']} id={'dropdown'+e['id']} onClick={this.test} onToggle={this.textToggle} className="dropdown" as={NavItem}>
                     <Dropdown.Toggle style={this.state.textStyle} className="dropText">{e['dropToggle']}
-                        <FontAwesomeIcon  className="navIcon" icon="angle-down" size="sm"/>
+                        <FontAwesomeIcon id={'icon'+e['id']} className="navIcon" icon="angle-down" size="sm"/>
                     </Dropdown.Toggle>
                     <Dropdown.Menu className="dropMenu">
                         {e['dropItem'].map((d,i)=>{
