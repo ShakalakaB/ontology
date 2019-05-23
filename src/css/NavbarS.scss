@@ -1,0 +1,199 @@
+@import "../node_modules/bootstrap/scss/_functions.scss";
+@import "../node_modules/bootstrap/scss/_variables.scss";
+@import "../node_modules/bootstrap/scss/mixins/_breakpoints.scss";
+$navBackground:transparent;
+$navTogBackground:#2FA3F1;
+$textHover:rgba(255,255,255,0.8);
+@include media-breakpoint-up(lg) {
+    #navLinks{
+        position: absolute;
+        height:2.5em;
+        right:0;
+        .mr-auto{
+            display:flex;
+            align-items: center;
+        }
+        .dropdown{
+            align-items: center;
+            border:2px solid transparent;
+        }
+        #langMenu,.dropMenu{
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            background-color: rgba(0,0,0,0.6);
+        }
+        .dropText:active+.dropMenu{display:none}
+        .dropText:focus+.dropMenu{display:none}
+        .dropText:active,.dropText:focus{
+            box-shadow:none;
+            //outline: 0;
+        }
+        .dropdown:hover>.dropMenu{
+            display:block;
+        }
+        .dropdown:hover>.dropText{
+            color:rgba(255,255,255,0.8);
+        }
+        .dropText{
+            user-select: none;
+            border:none;
+            background-color: $navBackground;
+        }
+        .dropdown:hover .navIcon{
+            transform:rotate(-180deg);
+            transition:all 0.5s;
+        }
+        .navIcon{
+            display: inline-block;
+            margin-left:10px;
+            transition:all 0.1s;
+        }
+        .langItem,.item{
+            color:white;
+            font-size: 0.8em;
+        }
+        .item:hover,.langItem:hover{
+            color:rgba(255,255,255,0.8);
+            background-color: $navBackground;
+        }
+        #langDrop:target #langIcon{
+            transform:rotate(-180deg);
+            transition:all 0.5s;
+        }
+        #langDrop{
+            box-sizing: border-box;
+            padding-top:0px;
+            border:none;
+        }
+        #langText{
+            padding-top:0px;
+            padding-bottom: 0px;
+            border:1px solid rgba(255,255,255,0.4);
+            background-color: $navBackground;
+        }
+        #langText:active,#langText:focus{
+            box-shadow:none;
+        }
+        #langMenu{min-width:0}
+        .langItem{
+            margin-left:auto;
+            margin-right:auto;
+            width:100px;
+        }
+    }
+}
+@include media-breakpoint-down(md){
+
+    #navLinks{
+        height:100vh;
+        padding-top:3em;
+    }
+    .dropdown{
+        padding-left:3em;
+        padding-right:3em;
+        .dropText{
+            width:100%;
+            text-align: left;
+            background-color:$navBackground;
+            border-radius: 0;
+            border-top:none;
+            border-right:none;
+            border-left: none;
+            border-bottom:1px solid rgba(255,255,255,0.3);
+            //border:2px solid white;
+            color:white;
+            &:hover{color:$textHover}
+            &:active .navIcon{
+                box-shadow: none;
+                transform:rotate(180deg)
+            }
+            .navIcon{
+                position: absolute;
+                right:5em;
+                //transition:all 0.1s;
+            }
+        }
+        .dropMenu{
+            background-color: $navTogBackground;
+            border:none;
+            padding-top: 0;
+            padding-bottom: 0;
+            &:focus>.item{
+                border:2px solid red;
+            }
+            .item{
+                font-size:0.8em;
+                color:white;
+                border-bottom: 1px solid rgba(255,255,255,0.3);
+                &:hover{
+                    background-color: $navTogBackground;
+                    color:$textHover;
+                }
+            }
+        }
+    }
+    #langDrop{
+        text-align: center;
+        margin-top:1em;
+        #langText{
+            padding-top:0px;
+            padding-bottom: 0px;
+            background-color: $navTogBackground;
+            border:1px solid rgba(255,255,255,0.4);
+        }
+        #langText:focus{box-shadow: none}
+        #langMenu{
+            padding-top: 0;
+            padding-bottom: 0;
+            border:none;
+            background-color: $navTogBackground;
+            .langItem{
+                width:6em;
+                padding:0;
+                text-align: center;
+                margin-right:auto;
+                margin-left:auto;
+                font-size:0.8em;
+                color:white;
+                border:1px solid rgba(255,255,255,0.3);
+            }
+        }
+    }
+    .langItem:hover{
+        background-color: $navTogBackground;
+        //color:rgba(255,255,255,0.8);
+        color:white;
+    }
+}
+#nav{
+    max-width:1100px;
+    padding:0;
+    box-sizing: border-box;
+    margin-right:auto;
+    margin-left:auto;
+    #logo{
+        height:30px;
+        margin-left:1em;
+    }
+    #toggle:active,#toggle:focus{
+        outline: 0;
+    }
+    #toggle{border:none}
+    .navbar-toggler-icon{
+        display:none;
+    }
+    #langIcon{
+        display: inline-block;
+        margin-left:10px;
+    }
+    #bars{color:white}
+    .dropText,#langText{
+        font-size: 0.8em;
+        //color:white;
+    }
+    .dropText::after,#langText::after{
+        display:none
+    }
+    
+}

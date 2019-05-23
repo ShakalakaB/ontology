@@ -1,10 +1,14 @@
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
     faAngleUp,
-    faAngleDown
+    faAngleDown,
+    faBars,
+    faTimes
 } from '@fortawesome/free-solid-svg-icons';
 
 library.add(
     faAngleUp,
-    faAngleDown
+    faAngleDown,
+    faBars,
+    faTimes
 );
