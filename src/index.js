@@ -1,31 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Homepage from './components/Homepage';
-import Test from './components/Test';
-
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import './index.scss';
-
+import { BrowserRouter} from 'react-router-dom';
+//import registerServiceWorker from './registerServiceWorker';
+import Ontology from './components/Ontology';
+import Testapp from './components/Testapp';
 
 const projectName = 'Practice Project- Ontology(https://ont.io/home)';
 localStorage.setItem('practiceProject','Ontology');
 
-class Ontology extends React.Component{
-  constructor(props){
-    super(props);
-  }
-  render(){
-    return(
-      <div>
-        <Homepage />
-        {/*<Test />*/}
-      </div>
-    );
-  }
-}
-ReactDOM.render(
+/*ReactDOM.render(
   <Ontology />,
   document.getElementById('ontology')
-);
-
+);*/
+ReactDOM.render((
+  <BrowserRouter>
+    <Ontology />
+</BrowserRouter>),
+  document.getElementById('ontology'));
+/*ReactDOM.render((
+  <BrowserRouter>
+    <Testapp />
+  </BrowserRouter>),
+    document.getElementById('ontology'));*/
 module.hot.accept();

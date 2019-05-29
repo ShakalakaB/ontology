@@ -1,5 +1,7 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import {Navbar,Nav,NavItem,Dropdown} from 'react-bootstrap';
+import {LinkContainer} from 'react-router-bootstrap';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '../fontsawesome';
@@ -15,9 +17,8 @@ class NavbarS extends React.Component{
             langCho:true,
             clickSty:{rotate:{},menu:{}},
             navToggle:false,
-            navToggleStyle:{},
+            navStyle:{},
             textToggle:false,
-            //textIconSty:{},
             textStyle:{}
         }
         this.langClick=this.langClick.bind(this);
@@ -25,7 +26,9 @@ class NavbarS extends React.Component{
         this.navToggleClick=this.navToggleClick.bind(this);
         this.viewWidth = this.viewWidth.bind(this);
         this.textToggle=this.textToggle.bind(this);
-        this.test=this.test.bind(this);
+        this.iconRotate=this.iconRotate.bind(this);
+        this.mouEnter=this.mouEnter.bind(this);
+        this.mouLea=this.mouLea.bind(this);
     }
     componentDidMount() {
         this.viewWidth();
@@ -36,7 +39,7 @@ class NavbarS extends React.Component{
     }
       
     langClick(){
-        let style=this.state.lang?({rotate:{transform:`rotate(-180deg)`,transition:`all 0.5s`},menu:{display:`block`}}):
+        let style=this.state.langCli?({rotate:{transform:`rotate(-180deg)`,transition:`all 0.5s`},menu:{display:`block`}}):
         ({rotate:{transition:`all 0.5s`},menu:{}});
         this.setState({
             langCli:!this.state.langCli,
@@ -61,24 +64,30 @@ class NavbarS extends React.Component{
         }
         this.setState({
             navToggle:!this.state.navToggle,
-            navToggleStyle:style
+            navStyle:style
         });
     }
     viewWidth() {
-        if (window.innerWidth>=breakpoint){
-            let icon=document.getElementsByClassName('navIcon')[0];
-            icon.style.transform="rotate(0deg)";
+        if(window.innerWidth<breakpoint){
+            this.setState({
+                textStyle:{backgroundColor:navBackground,boxShadow:`none`,borderBottom:`1px solid rgba(255,255,255,0.3)`}
+            });
         }
-        this.setState({
-            textStyle:{backgroundColor:navBackground,boxShadow:`none`,borderBottom:`1px solid rgba(255,255,255,0.3)`}
-        });
+        if (window.innerWidth>=breakpoint){
+            let icons=document.getElementsByClassName('navIcon');
+            Array.prototype.map.call(icons,icon=>{icon.style.transform="rotate(0deg)"});
+            this.setState({
+                textStyle:{border:`none`}
+            });
+        }
+        
         if (window.innerWidth>=breakpoint && this.state.navToggle){
             this.setState({
-                navToggleStyle:{backgroundColor:navBackground}
+                navStyle:{backgroundColor:navBackground}
             });
         }else if (window.innerWidth<breakpoint && this.state.navToggle){
             this.setState({
-                navToggleStyle:{backgroundColor:navTogBackground}
+                navStyle:{backgroundColor:navTogBackground}
             });
         }
     }
@@ -89,7 +98,7 @@ class NavbarS extends React.Component{
             });
         }
     }
-    test(event){
+    iconRotate(event){
         if (window.innerWidth<breakpoint){
             let iconId='icon'+(event.currentTarget.id).match(/\d+/)[0];
             let icon=document.getElementById(iconId);
@@ -117,13 +126,29 @@ class NavbarS extends React.Component{
             lastIconId=iconId;
         }
     }
+    mouEnter(event){
+        if (window.innerWidth>=breakpoint){
+            let iconId='icon'+(event.currentTarget.id).match(/\d+/)[0];
+            let icon=document.getElementById(iconId);
+            icon.style.transform="rotate(-180deg)";
+            icon.style.transition="all 0.5s";
+        }
+    }
+    mouLea(event){
+        if (window.innerWidth>=breakpoint){
+            let iconId='icon'+(event.currentTarget.id).match(/\d+/)[0];
+            let icon=document.getElementById(iconId);
+            icon.style.transform="rotate(0deg)";
+            icon.style.transition="all 0.1s";
+        }
+    }
     render(){
         let navItems=(this.state.langCho)?
             (navContent['chinese'].map(e=>{
                 return (
-                <Dropdown key={'dropdown'+e['id']} id={'dropdown'+e['id']} onClick={this.test} onToggle={this.textToggle} className="dropdown" as={NavItem}>
+                <Dropdown key={'dropdown'+e['id']} id={'dropdown'+e['id']} onClick={this.iconRotate} onToggle={this.textToggle} onMouseEnter={this.mouEnter}  onMouseLeave={this.mouLea} className="dropdown" as={NavItem}>
                     <Dropdown.Toggle style={this.state.textStyle} className="dropText">{e['dropToggle']}
-                        <FontAwesomeIcon id={'icon'+e['id']} className="navIcon" icon="angle-down" size="sm"/>
+                        <FontAwesomeIcon id={'icon'+e['id']} className="navIcon" icon="angle-down" size="lg"/>
                     </Dropdown.Toggle>
                     <Dropdown.Menu className="dropMenu">
                         {e['dropItem'].map((d,i)=>{
@@ -134,7 +159,7 @@ class NavbarS extends React.Component{
                 )
             })):(navContent['english'].map(e=>{
                 return (
-                <Dropdown key={'dropdown'+e['id']} onToggle={this.textToggle} className="dropdown" as={NavItem}>
+                <Dropdown key={'dropdown'+e['id']}  onClick={this.iconRotate} onToggle={this.textToggle} onMouseEnter={this.mouEnter}  onMouseLeave={this.mouLea} className="dropdown" as={NavItem}>
                     <Dropdown.Toggle style={this.state.textStyle} className="dropText">{e['dropToggle']}
                         <FontAwesomeIcon  className="navIcon" icon="angle-down" size="sm"/>
                     </Dropdown.Toggle>
@@ -147,10 +172,12 @@ class NavbarS extends React.Component{
                 )
             }));
         return(
-            <div>
-                <Navbar id="nav" expand="lg" style={this.state.navToggleStyle}>
-                    <Navbar.Brand href="#home">
-                        <img id="logo" src={require("../images/logos.png")} alt="Ontology logo"></img>
+            <div id="navWrap">
+                <Navbar id="nav" expand="lg" style={this.state.navStyle}>
+                    <Navbar.Brand>
+                        <Link to="/test">
+                            <img id="logo" src={require("../images/logos.png")} alt="Ontology logo" />
+                        </Link>
                     </Navbar.Brand>
                     <Navbar.Toggle id="toggle" onClick={this.navToggleClick}>
                         {this.state.toggle?(
