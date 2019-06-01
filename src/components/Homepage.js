@@ -155,7 +155,7 @@ class Homepage extends React.Component{
                                     <p>本体所提供的平台可以让缺乏资金或资源的开发人员和初创公司构建去中心化的应用程序。</p>
                                 </div>
                                 <div className="report">
-                                    <img className="reportImages" src={require("../images/Homepage/report2.png")} alt="reportImage2"></img>
+                                    <img className="reportImages" src={require("../images/Homepage/report2.png")} alt="testreportImage2"></img>
                                     <p>基础性链网“本体网络”预览发布，为行业应用提供“最后一公里”支持。</p>
                                 </div>
                             </div>

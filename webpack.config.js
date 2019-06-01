@@ -28,7 +28,7 @@ module.exports = {
       },
     output: {
       path: __dirname + '/dist',
-      publicPath: '/',
+      publicPath: '/ontology/',
       filename: 'bundle.js'
     },
     plugins: [
