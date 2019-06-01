@@ -111,7 +111,6 @@
             }
         }
         #footerBottom{
-
         }
     }
 }
@@ -255,7 +254,9 @@
             }
         }
         #footerBottom{
-
+            /*display:flex;
+            flex-direction: column;
+            justify-content: flex-start;*/
         }
     }
 }
@@ -678,17 +679,19 @@
         margin-left: auto;
         margin-right: auto;
         padding-top:1em;
-        //margin-top:
-        display:flex;
+        background-color:lightblue;
+        /*display:flex;
         flex-direction: row;
-        justify-content: flex-end;
-        align-items: center;
+        justify-content: flex-end;*/
+        //margin-top:
+        //align-items: center;
         p{
-            margin-right:28.5em;
+           // margin-right:28.5em;
             margin-top:auto;
             margin-bottom:auto;
             font-size:0.6em;
-            //border:2px solid black;
+            color:purple;
+            border:2px solid black;
         }
         #footerLang{
             #langToggle{
