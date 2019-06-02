@@ -34,6 +34,8 @@
             display:flex;
             flex-direction: row;
             .introText{
+                width:29em;
+                height:13em;
                 .introP{
                     font-size:1em;
                 }
@@ -45,8 +47,8 @@
     }
     #reports{
         #car{
-            height:8em;
             .carItem{
+                margin-bottom: 2em;
                 #reportWrap{
                     display:flex;
                     flex-direction: row;
@@ -71,6 +73,8 @@
         #partnerCar{
             .partnerItem{
                 height:12em;
+                padding-left:5em;
+                padding-right:5em;
                 .partnerWrap{
                     margin-top:2em;
                     display:grid;
@@ -111,6 +115,18 @@
             }
         }
         #footerBottom{
+            display:grid;
+            align-items: center;
+            grid-template-areas: '. copyright footerLang';
+            text-align: center;
+            p{
+                grid-area: copyright;
+                font-size:0.6em;
+            }
+            #footerLang{
+                grid-area: footerLang;
+                justify-self: end;
+            }
         }
     }
 }
@@ -163,8 +179,8 @@
     }
     #reports{
         #car{
-            height:8em;
             .carItem{
+                margin-bottom: 2em;
                 #reportWrap{
                     display:flex;
                     flex-direction: row;
@@ -189,6 +205,9 @@
         #partnerCar{
             .partnerItem{
                 height:auto;
+                padding-left:1em;
+                padding-right:1em;
+                margin-bottom: 1em;
                 .partnerWrap{
                     height:13em;
                     margin-top:0;
@@ -254,9 +273,20 @@
             }
         }
         #footerBottom{
-            /*display:flex;
-            flex-direction: column;
-            justify-content: flex-start;*/
+            display:grid;
+            grid-template-areas: 
+                'footerLang'
+                'copyright';
+            grid-row-gap: 1em;
+            p{
+                grid-area: copyright;
+                margin-left:2.5em;
+                font-size:0.8em;
+            }
+            #footerLang{
+                grid-area: footerLang;
+                margin-left:2em;
+            }
         }
     }
 }
@@ -294,8 +324,10 @@
     }
     #intro{
         width:100%;
+        padding-left:1em;
+        padding-right:1em;
+        margin-bottom: 2em;
         .introInfo{
-            width:100%;
             display:flex;
             flex-direction:column-reverse;
             .introText{
@@ -316,6 +348,7 @@
         #car{
             height:auto;
             .carItem{
+                margin-bottom: 2em;
                 #reportWrap{
                     display:flex;
                     flex-direction: column;
@@ -325,11 +358,13 @@
                     .report{
                         display:flex;
                         flex-direction: column;
-                        justify-content: space-around;
+                        justify-content: flex-start;
                         align-items: flex-start;
                         width:80%;
                         margin-bottom: 2em;
                         height:6em;
+                        line-height: 100%;
+                        overflow:hidden;
                         border-left:4px solid #ebc40f;
                         .reportImages{
                             margin-left: 0.5em;
@@ -460,7 +495,6 @@
 #intro{
     width:100%;
     height:auto;
-    background-color: #d7e4ef;
     .introInfo{
         justify-content: center;
         align-items: center;
@@ -470,8 +504,6 @@
         padding-left:1em;
         padding-right:1em;
         .introText{
-            width:29em;
-            height:13em;
             .introTitle{
                 margin-bottom: 1em;
                 font-size:1.8em;
@@ -514,8 +546,8 @@
             //border:2px dotted yellow;
             #reportWrap{
                 max-width:46em;
-                margin-left: auto;
-                margin-right: auto;
+                margin-left: 1em;
+                margin-right: 1em;
                 //border:2px solid green;
             }
             .report{
@@ -557,8 +589,6 @@
         margin-right: auto;
         //border:2px dotted blue;
         .partnerItem{
-            padding-left:5em;
-            padding-right:5em;
             //border:2px solid purple;
             .partnerWrap{
                 //border:2px solid black;
@@ -676,24 +706,14 @@
     }
     #footerBottom{
         max-width: $maxWidth;
-        margin-left: auto;
-        margin-right: auto;
-        padding-top:1em;
-        background-color:lightblue;
-        /*display:flex;
-        flex-direction: row;
-        justify-content: flex-end;*/
-        //margin-top:
-        //align-items: center;
+        margin:1em auto 0 auto;
         p{
-           // margin-right:28.5em;
             margin-top:auto;
             margin-bottom:auto;
-            font-size:0.6em;
-            color:purple;
-            border:2px solid black;
+            color:#595959;
         }
         #footerLang{
+            padding-right:1em;
             #langToggle{
                 width:8em;
                 height:2em;
@@ -701,7 +721,7 @@
                 flex-direction: row;
                 justify-content: space-between;
                 color:#595959;
-                font-size:0.7em;
+                font-size:0.8em;
                 text-align: left;
                 padding:0 0.5em 0 0.5em;
                 line-height: 2em;
@@ -719,19 +739,13 @@
                 }
             }
             #langMenu{
-                width:5.5em;
+                width:6.5em;
                 left: 50%;
                 transform: translateX(-50%);
                 text-align: center;
                 min-width:0;
-                padding-top:0;
-                padding-bottom:0;
-                //border:2px solid black;
                 .langItem{
                     font-size: 0.8em;
-                    margin-left:auto;
-                    margin-right:auto;
-                    width:100px;
                     &:hover{
                         background-color:#f5f7fa;
                     }

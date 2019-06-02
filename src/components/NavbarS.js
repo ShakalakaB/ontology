@@ -180,8 +180,8 @@ class NavbarS extends React.Component{
                         </Link>
                     </Navbar.Brand>
                     <Navbar.Toggle id="toggle" onClick={this.navToggleClick}>
-                        {this.state.toggle?(
-                            <FontAwesomeIcon id="bars" icon="times" size="lg"/>
+                        {this.state.navToggle?(
+                            <FontAwesomeIcon id="times" icon="times" size="lg" color="white" />
                         ):(<FontAwesomeIcon id="bars" icon="bars" size="sm"/>
                         )}
                     </Navbar.Toggle>

@@ -1,6 +1,6 @@
 import React from 'react';
 import {Carousel} from 'react-bootstrap';
-import {Button,Collapse,Navbar,Nav,NavItem,Dropdown} from 'react-bootstrap';
+import {Collapse,Dropdown} from 'react-bootstrap';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '../fontsawesome';
