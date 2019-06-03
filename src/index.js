@@ -13,7 +13,8 @@ localStorage.setItem('practiceProject','Ontology');
   document.getElementById('ontology')
 );*/
 ReactDOM.render((
-  <BrowserRouter basename={"/ontology"}>
+  /*<BrowserRouter basename={"/ontology"}>*/
+<BrowserRouter>
     <Ontology />
 </BrowserRouter>),
   document.getElementById('ontology'));

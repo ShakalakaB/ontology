@@ -14,7 +14,6 @@ class NavbarS extends React.Component{
         super(props);
         this.state={
             langCli:true,
-            langCho:true,
             clickSty:{rotate:{},menu:{}},
             navToggle:false,
             navStyle:{},
@@ -22,7 +21,6 @@ class NavbarS extends React.Component{
             textStyle:{}
         }
         this.langClick=this.langClick.bind(this);
-        this.langChoose=this.langChoose.bind(this);
         this.navToggleClick=this.navToggleClick.bind(this);
         this.viewWidth = this.viewWidth.bind(this);
         this.textToggle=this.textToggle.bind(this);
@@ -45,13 +43,6 @@ class NavbarS extends React.Component{
             langCli:!this.state.langCli,
             clickSty:style
         });
-    }
-    langChoose(){
-        if(event.target.id=='chinese'){
-            this.setState({langCho:true});
-        }else{
-            this.setState({langCho:false});
-        }
     }
     navToggleClick(){
         let style;
@@ -143,39 +134,12 @@ class NavbarS extends React.Component{
         }
     }
     render(){
-        let navItems=(this.state.langCho)?
-            (navContent['chinese'].map(e=>{
-                return (
-                <Dropdown key={'dropdown'+e['id']} id={'dropdown'+e['id']} onClick={this.iconRotate} onToggle={this.textToggle} onMouseEnter={this.mouEnter}  onMouseLeave={this.mouLea} className="dropdown" as={NavItem}>
-                    <Dropdown.Toggle style={this.state.textStyle} className="dropText">{e['dropToggle']}
-                        <FontAwesomeIcon id={'icon'+e['id']} className="navIcon" icon="angle-down" size="lg"/>
-                    </Dropdown.Toggle>
-                    <Dropdown.Menu className="dropMenu">
-                        {e['dropItem'].map((d,i)=>{
-                            return (<Dropdown.Item key={'dropItem'+i} className="item">{d}</Dropdown.Item>);
-                        })}
-                    </Dropdown.Menu>
-                </Dropdown>
-                )
-            })):(navContent['english'].map(e=>{
-                return (
-                <Dropdown key={'dropdown'+e['id']}  onClick={this.iconRotate} onToggle={this.textToggle} onMouseEnter={this.mouEnter}  onMouseLeave={this.mouLea} className="dropdown" as={NavItem}>
-                    <Dropdown.Toggle style={this.state.textStyle} className="dropText">{e['dropToggle']}
-                        <FontAwesomeIcon  className="navIcon" icon="angle-down" size="sm"/>
-                    </Dropdown.Toggle>
-                    <Dropdown.Menu className="dropMenu">
-                        {e['dropItem'].map((d,i)=>{
-                            return (<Dropdown.Item key={'dropItem'+i} className="item">{d}</Dropdown.Item>);
-                        })}
-                    </Dropdown.Menu>
-                </Dropdown>
-                )
-            }));
+        let navText=(this.props.lang)?navContent['chinese']:navContent['english'];
         return(
             <div id="navWrap">
                 <Navbar id="nav" expand="lg" style={this.state.navStyle}>
                     <Navbar.Brand>
-                        <Link to="/test">
+                        <Link to="/">
                             <img id="logo" src={require("../images/logos.png")} alt="Ontology logo" />
                         </Link>
                     </Navbar.Brand>
@@ -187,14 +151,49 @@ class NavbarS extends React.Component{
                     </Navbar.Toggle>
                     <Navbar.Collapse id="navLinks">
                         <Nav className="mr-auto">
-                            {navItems}
+                            <Dropdown id='dropdown1' onClick={this.iconRotate} onToggle={this.textToggle} onMouseEnter={this.mouEnter}  onMouseLeave={this.mouLea} className="dropdown" as={NavItem}>
+                                <Dropdown.Toggle style={this.state.textStyle} className="dropText">{navText[0]['dropToggle']}
+                                    <FontAwesomeIcon id='icon1' className="navIcon" icon="angle-down" size="lg"/>
+                                </Dropdown.Toggle>
+                                <Dropdown.Menu className="dropMenu">
+                                    <Dropdown.Item className="item">{navText[0]['dropItem'][0]}</Dropdown.Item>
+                                    <Dropdown.Item className="item">{navText[0]['dropItem'][1]}</Dropdown.Item>
+                                </Dropdown.Menu>
+                            </Dropdown>
+                            <Dropdown id='dropdown2' onClick={this.iconRotate} onToggle={this.textToggle} onMouseEnter={this.mouEnter}  onMouseLeave={this.mouLea} className="dropdown" as={NavItem}>
+                                <Dropdown.Toggle style={this.state.textStyle} className="dropText">{navText[1]['dropToggle']}
+                                    <FontAwesomeIcon id='icon2' className="navIcon" icon="angle-down" size="lg"/>
+                                </Dropdown.Toggle>
+                                <Dropdown.Menu className="dropMenu">
+                                    <Dropdown.Item className="item">{navText[1]['dropItem'][0]}</Dropdown.Item>
+                                    <Dropdown.Item className="item">{navText[1]['dropItem'][1]}</Dropdown.Item>
+                                </Dropdown.Menu>
+                            </Dropdown>
+                            <Dropdown id='dropdown3' onClick={this.iconRotate} onToggle={this.textToggle} onMouseEnter={this.mouEnter}  onMouseLeave={this.mouLea} className="dropdown" as={NavItem}>
+                                <Dropdown.Toggle style={this.state.textStyle} className="dropText">{navText[2]['dropToggle']}
+                                    <FontAwesomeIcon id='icon3' className="navIcon" icon="angle-down" size="lg"/>
+                                </Dropdown.Toggle>
+                                <Dropdown.Menu className="dropMenu">
+                                    <Dropdown.Item className="item">{navText[2]['dropItem'][0]}</Dropdown.Item>
+                                    <Dropdown.Item className="item">{navText[2]['dropItem'][1]}</Dropdown.Item>
+                                </Dropdown.Menu>
+                            </Dropdown>
+                            <Dropdown id='dropdown4' onClick={this.iconRotate} onToggle={this.textToggle} onMouseEnter={this.mouEnter}  onMouseLeave={this.mouLea} className="dropdown" as={NavItem}>
+                                <Dropdown.Toggle style={this.state.textStyle} className="dropText">{navText[3]['dropToggle']}
+                                    <FontAwesomeIcon id='icon4' className="navIcon" icon="angle-down" size="lg"/>
+                                </Dropdown.Toggle>
+                                <Dropdown.Menu className="dropMenu">
+                                    <Dropdown.Item className="item">{navText[3]['dropItem'][0]}</Dropdown.Item>
+                                    <Dropdown.Item className="item">{navText[3]['dropItem'][1]}</Dropdown.Item>
+                                </Dropdown.Menu>
+                            </Dropdown>
                             <Dropdown onToggle={this.langClick} id="langDrop" as={NavItem}>
-                                <Dropdown.Toggle id="langText" >{this.state.langCho?'中文':'English'}
+                                <Dropdown.Toggle id="langText" >{this.props.lang?'中文':'English'}
                                     <FontAwesomeIcon style={this.state.clickSty['rotate']} id="langIcon" icon="angle-down" size="sm"/>
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu style={this.state.clickSty['menu']} id="langMenu">
-                                    <Dropdown.Item className="langItem" id="chinese" onClick={this.langChoose}>中文</Dropdown.Item>
-                                    <Dropdown.Item className="langItem" id="english" onClick={this.langChoose}>English</Dropdown.Item>
+                                    <Dropdown.Item className="langItem" id="chinese" onClick={this.props.onClick}>中文</Dropdown.Item>
+                                    <Dropdown.Item className="langItem" id="english" onClick={this.props.onClick}>English</Dropdown.Item>
                                 </Dropdown.Menu>
                             </Dropdown>
                         </Nav>

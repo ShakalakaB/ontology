@@ -53,6 +53,8 @@
                     display:flex;
                     flex-direction: row;
                     justify-content: space-between;
+                    margin-left: auto;
+                    margin-right: auto;
                     height:6em;
                     .report{
                         display:flex;
@@ -185,6 +187,8 @@
                     display:flex;
                     flex-direction: row;
                     justify-content: space-between;
+                    margin-left: 1em;
+                    margin-right: 1em;
                     height:6em;
                     .report{
                         display:flex;
@@ -378,6 +382,27 @@
             }
         }
     }
+    #partner{
+        #partnerCar{
+            .partnerItem{
+                height:auto;
+                padding-left:1em;
+                padding-right:1em;
+                margin-bottom: 2em;
+                //border:2px solid   black;
+                .partnerWrap{
+                    height:13em;
+                    margin-top:0;
+                    display:grid;
+                    grid-template-rows: auto auto auto auto;
+                    grid-template-columns: auto auto;
+                    justify-content: space-evenly;
+                    margin-bottom: 1em;
+                    //justify-content: center;
+                }
+            }
+        }
+    }
     #socialMedia{
         #smWrap{
             display:flex;
@@ -421,7 +446,7 @@
         position: relative;
         text-align: center;
         color:white;
-        margin-top:0;
+        margin:0 1em 1em 1em;
         //font-size:1.3em;
         font-weight: bold;
         //border:2px solid red;
@@ -462,9 +487,6 @@
             border-radius: 12px;
             background-color: rgba(0,0,0,0.2);
             overflow: hidden;
-            &:hover >img{
-                transform:scale(1.1);
-            }
             .keyword{
                 position: absolute;
                 top:0.6em;
@@ -478,10 +500,15 @@
                 margin-left:1em;
                 line-height:120%;
             }
-            img{
-                border-radius: 12px;
-                transition:all 1s;
-                z-index: -1;
+            a{
+                &:hover >img{
+                    transform:scale(1.1);
+                }
+                img{
+                    border-radius: 12px;
+                    transition:all 1s;
+                    z-index: -1;
+                }
             }
         }
         .newsTopImages{
@@ -546,8 +573,6 @@
             //border:2px dotted yellow;
             #reportWrap{
                 max-width:46em;
-                margin-left: 1em;
-                margin-right: 1em;
                 //border:2px solid green;
             }
             .report{

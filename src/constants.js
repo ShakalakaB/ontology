@@ -29,3 +29,7 @@ export const navContent={
               dropItem:['About us','Contact us']
             }]
     };
+    export const homepageContent={
+      chinese:[],
+      english:[]
+    };

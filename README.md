@@ -1,6 +1,10 @@
 # ontology
 Practice project. Example:https://ont.io/home
 
+load speed
+store user's choice of lang
+
+Violation] Forced reflow while executing JavaScript took 55ms
 ### Navbar: 
 
 + customize bootstrap
@@ -11,12 +15,6 @@ Practice project. Example:https://ont.io/home
 + Problem: langclick in English
 
 **Homepage**
-intro overflow
+reports
+partner on iphone
 
-navabar <md hambergur no change
-
-report "Forbes" outsize
-
-partner
-
-footer @copyright disappear, not responsive

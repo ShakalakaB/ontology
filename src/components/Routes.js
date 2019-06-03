@@ -6,14 +6,25 @@ import Test from './Test';
 import Category from './Category';
 import Products from './Products';*/
 
-const Routes=()=>(
-    <div>
-        <Switch>
-            <Route exact path='/' component={Homepage} />
-            {/*<Route exact path='/test' component={Test} />*/}
-        </Switch>
-    </div>
-);
+//const Routes=(lang)=>(
+//function Routes(prop){
+class Routes extends React.Component{
+    constructor(props){
+        super(props);
+    }
+    render(){
+        return(
+            <div>
+                <Switch>
+                <Route exact path='/' 
+                    render={(props)=><Homepage {...props} lang={this.props.lang} langCho={this.props.onClick}></Homepage>} />
+                {/*<Route exact path='/' component={Homepage} />
+                <Route exact path='/test' component={Test} />*/}
+                </Switch>
+            </div>
+        );
+    }
+}
 /*const Mainroutes=()=>(
     <div>
         <Route path="/" component={Home}/>
