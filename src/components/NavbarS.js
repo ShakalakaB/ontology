@@ -157,7 +157,9 @@ class NavbarS extends React.Component{
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu className="dropMenu">
                                     <Dropdown.Item className="item">{navText[0]['dropItem'][0]}</Dropdown.Item>
-                                    <Dropdown.Item className="item">{navText[0]['dropItem'][1]}</Dropdown.Item>
+                                    <LinkContainer to="/explorer">
+                                        <Dropdown.Item className="item">{navText[0]['dropItem'][1]}</Dropdown.Item>
+                                    </LinkContainer>
                                 </Dropdown.Menu>
                             </Dropdown>
                             <Dropdown id='dropdown2' onClick={this.iconRotate} onToggle={this.textToggle} onMouseEnter={this.mouEnter}  onMouseLeave={this.mouLea} className="dropdown" as={NavItem}>

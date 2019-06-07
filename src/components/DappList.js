@@ -122,7 +122,6 @@ dAppdata.map(e=>{
   volumeTotal=volumeTotal+parseInt(e['volume']['hours'].match(/[\d\.]/g).join(''));
 });
 
-console.log(userTotal);
 function nameFormatter(cell,row){
     return(
         <div className="tname">

@@ -2,6 +2,7 @@ import React from 'react';
 import {Switch, Route} from 'react-router-dom';
 import Homepage from './Homepage';
 import DappList from './DappList';
+import Explorer from './Explorer';
 import Test from './Test';
 /*import Home from './Home';
 import Category from './Category';
@@ -19,6 +20,8 @@ class Routes extends React.Component{
                         render={(props)=><Homepage {...props} lang={this.props.lang} langCho={this.props.onClick}></Homepage>} />
                     <Route path='/dapplist' 
                         render={(props)=><DappList {...props} lang={this.props.lang}></DappList>} />
+                    <Route path='/explorer' 
+                        render={(props)=><Explorer {...props} lang={this.props.lang}></Explorer>} />
                     {/*<Route exact path='/' component={Homepage} />
                     <Route exact path='/test' component={Test} />*/}
                 </Switch>
