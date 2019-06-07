@@ -12,9 +12,12 @@ Violation] Forced reflow while executing JavaScript took 55ms
 + Add transparent border around dropdown button can solve the dropmenu disappearing too soon problem.
 + Navbar collapse, how rotate angle arrow once clicked
 + set transform through react js, would crush with css transform
-+ Problem: langclick in English
++ Problem: dropdown menu item color when clicked
 
 **Homepage**
 reports
 partner on iphone
 
+**DappList**
+AppSlider responsive breakpoint 2000?
+function nameFormatter, `<img className="nameImage" src= {require("../images/DappList/"+test)}>`

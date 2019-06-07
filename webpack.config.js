@@ -1,4 +1,5 @@
 const webpack = require('webpack');
+const path=require('path');
 module.exports = {
     entry: './src/index.js',
     module: {
@@ -20,6 +21,12 @@ module.exports = {
                 options:{limit:8192}
               }
             ]
+          },
+          {
+            test:/\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+            use:[{
+              loader:'file-loader',
+              options:{name:'[name].[ex]',outputPath:'fonts/'}}]
           }
         ]
       },
@@ -27,8 +34,8 @@ module.exports = {
         extensions: ['*', '.js', '.jsx']
       },
     output: {
-      path: __dirname + '/dist',
-      //publicPath: '/ontology/',
+      path: path.join(__dirname + '/dist'),
+      publicPath: '/ontology/',
       //publicPath:"/",
       filename: 'bundle.js'
     },
@@ -37,6 +44,7 @@ module.exports = {
       ],
     devServer: {
       contentBase: './dist',
+      historyApiFallback: true,
       hot:true
     }
   };

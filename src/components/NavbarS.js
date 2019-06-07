@@ -5,7 +5,7 @@ import {LinkContainer} from 'react-router-bootstrap';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '../fontsawesome';
-import {navTogBackground,breakpoint,navBackground,navContent} from '../constants';
+import {navTogBackground,mdBreakpoint,navBackground,navContent} from '../constants';
 
 let lastIconId=0;
 let sameIcon=true;
@@ -59,12 +59,12 @@ class NavbarS extends React.Component{
         });
     }
     viewWidth() {
-        if(window.innerWidth<breakpoint){
+        if(window.innerWidth<mdBreakpoint){
             this.setState({
                 textStyle:{backgroundColor:navBackground,boxShadow:`none`,borderBottom:`1px solid rgba(255,255,255,0.3)`}
             });
         }
-        if (window.innerWidth>=breakpoint){
+        if (window.innerWidth>=mdBreakpoint){
             let icons=document.getElementsByClassName('navIcon');
             Array.prototype.map.call(icons,icon=>{icon.style.transform="rotate(0deg)"});
             this.setState({
@@ -72,25 +72,25 @@ class NavbarS extends React.Component{
             });
         }
         
-        if (window.innerWidth>=breakpoint && this.state.navToggle){
+        if (window.innerWidth>=mdBreakpoint && this.state.navToggle){
             this.setState({
                 navStyle:{backgroundColor:navBackground}
             });
-        }else if (window.innerWidth<breakpoint && this.state.navToggle){
+        }else if (window.innerWidth<mdBreakpoint && this.state.navToggle){
             this.setState({
                 navStyle:{backgroundColor:navTogBackground}
             });
         }
     }
     textToggle(event){
-        if (window.innerWidth<breakpoint){
+        if (window.innerWidth<mdBreakpoint){
             this.setState({
                 textStyle:{backgroundColor:navBackground,boxShadow:`none`,borderBottom:`1px solid rgba(255,255,255,0.3)`}
             });
         }
     }
     iconRotate(event){
-        if (window.innerWidth<breakpoint){
+        if (window.innerWidth<mdBreakpoint){
             let iconId='icon'+(event.currentTarget.id).match(/\d+/)[0];
             let icon=document.getElementById(iconId);
             let lastIcon=document.getElementById(lastIconId);
@@ -118,7 +118,7 @@ class NavbarS extends React.Component{
         }
     }
     mouEnter(event){
-        if (window.innerWidth>=breakpoint){
+        if (window.innerWidth>=mdBreakpoint){
             let iconId='icon'+(event.currentTarget.id).match(/\d+/)[0];
             let icon=document.getElementById(iconId);
             icon.style.transform="rotate(-180deg)";
@@ -126,7 +126,7 @@ class NavbarS extends React.Component{
         }
     }
     mouLea(event){
-        if (window.innerWidth>=breakpoint){
+        if (window.innerWidth>=mdBreakpoint){
             let iconId='icon'+(event.currentTarget.id).match(/\d+/)[0];
             let icon=document.getElementById(iconId);
             icon.style.transform="rotate(0deg)";
@@ -165,7 +165,9 @@ class NavbarS extends React.Component{
                                     <FontAwesomeIcon id='icon2' className="navIcon" icon="angle-down" size="lg"/>
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu className="dropMenu">
-                                    <Dropdown.Item className="item">{navText[1]['dropItem'][0]}</Dropdown.Item>
+                                    <LinkContainer to="/dapplist">
+                                        <Dropdown.Item className="item">{navText[1]['dropItem'][0]}</Dropdown.Item>
+                                    </LinkContainer>
                                     <Dropdown.Item className="item">{navText[1]['dropItem'][1]}</Dropdown.Item>
                                 </Dropdown.Menu>
                             </Dropdown>

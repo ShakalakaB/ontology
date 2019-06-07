@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter} from 'react-router-dom';
-//import registerServiceWorker from './registerServiceWorker';
 import Ontology from './components/Ontology';
 import Testapp from './components/Testapp';
 
@@ -13,8 +12,8 @@ localStorage.setItem('practiceProject','Ontology');
   document.getElementById('ontology')
 );*/
 ReactDOM.render((
-  /*<BrowserRouter basename={"/ontology"}>*/
-<BrowserRouter>
+//<BrowserRouter>
+<BrowserRouter basename={"/ontology"}>
     <Ontology />
 </BrowserRouter>),
   document.getElementById('ontology'));

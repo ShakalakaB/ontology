@@ -1,0 +1,435 @@
+@import "../node_modules/slick-carousel/slick/slick.css";
+@import "../node_modules/slick-carousel/slick/slick-theme.css";
+@import "../node_modules/bootstrap/scss/_functions.scss";
+@import "../node_modules/bootstrap/scss/_variables.scss";
+@import "../node_modules/bootstrap/scss/mixins/_breakpoints.scss";
+@import '../node_modules/react-bootstrap-table-next/dist/react-bootstrap-table2.min.css';
+@import '../node_modules/react-bootstrap-table2-paginator/dist/react-bootstrap-table2-paginator.min.css';
+@include media-breakpoint-up(lg){
+    #sliderWrap{
+        .slick-slide{
+            width:60vw;
+            height:10em;
+            margin-top:1em;
+            margin-bottom:1em;
+            div{
+                a{
+                    pointer-events: none;
+                }
+            }
+        }
+        .slick-active{
+            height:12em;
+            margin-top:0;
+            margin-bottom:0;
+            div{
+                a{
+                    pointer-events: auto;
+                    .sliderImage{
+                        filter:blur(0px);
+                    }
+                }
+            }
+        }
+    }
+    #appTable{
+        #sumWrap{
+            display:flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+        }
+    }
+    #appStore{
+        #apps{
+            display:grid;
+            grid-template-rows:auto auto;
+            grid-template-columns: auto auto auto;
+            grid-row-gap:2em;
+            justify-content: space-around;
+        }
+    }
+}
+@include media-breakpoint-down(md){
+    #sliderWrap{
+        .slick-slide{
+            width:60vw;
+            height:10em;
+            margin-top:1em;
+            margin-bottom:1em;
+            div{
+                a{
+                    pointer-events: none;
+                }
+            }
+        }
+        .slick-active{
+            height:12em;
+            margin-top:0;
+            margin-bottom:0;
+            div{
+                a{
+                    pointer-events: auto;
+                    .sliderImage{
+                        filter:blur(0px);
+                    }
+                }
+            }
+        }
+    }
+    #appTable{
+        #sumWrap{
+            display:flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+        }
+    }
+    #appStore{
+        #apps{
+            display:grid;
+            grid-template-rows:auto auto auto;
+            grid-template-columns: auto auto;
+            grid-row-gap:1em;
+            justify-content: space-around;
+        }
+    }
+}
+@include media-breakpoint-down(sm){
+    #sliderWrap{
+        .slick-dots{
+            height:2em;
+            bottom:0em;
+        }
+        .slick-slide{
+            height:10em;
+            margin-top:0em;
+            margin-bottom:0em;
+            div{
+                a{
+                    pointer-events: auto;
+                }
+            }
+        }
+        slick-active{
+            height:10em;
+            div{
+                a{
+                    pointer-events: auto;
+                    .sliderImage{
+                        filter:blur(0px);
+                    }
+                }
+            }
+        }
+    }
+    #appTable{
+        #sumWrap{
+            display:grid;
+            grid-template-rows: auto auto;
+            grid-template-columns: auto auto;
+            justify-content: space-around;
+            align-items: center;
+        }
+    }
+    #appStore{
+        #apps{
+            display:grid;
+            grid-template-rows:auto auto auto;
+            grid-template-columns: auto auto;
+            grid-row-gap:1em;
+            justify-content: center;
+            align-items: center;
+            .storeImage{
+                width:10em;
+                height:auto;
+            }
+        }
+    }
+}
+@include media-breakpoint-down(xs){
+    #appTable{
+        #sumWrap{
+            display:grid;
+            grid-template-rows: auto auto auto auto;
+            grid-template-columns: auto ;
+            justify-content: space-around;
+            align-items: center;
+        }
+    }
+    #appStore{
+        #apps{
+            display:grid;
+            grid-template-rows:auto auto auto auto auto auto;
+            grid-template-columns: auto;
+            grid-row-gap:1em;
+            justify-content: center;
+            align-items: center;
+            .storeImage{
+                width:10em;
+                height:auto;
+            }
+        }
+    }
+}
+#appList{
+    width:100%;
+    padding-top:4em;
+    background-color:#fafafa;
+    //border:2px solid purple;
+    #sliderWrap{
+        padding:0 1em 0 1em;
+        background-color: #ffffff;
+        //border:2px solid purple;
+        .slick-slide{
+            //width:40em;
+            //border:2px solid red;
+            div{
+                width:100%;
+                height:100%;
+                //border:2px solid black;
+                a{
+                    width:100%;
+                    height:100%;
+                    //border:2px solid green;
+                    .sliderImage{
+                        width:100%;
+                        height:100%;
+                        filter:blur(1px);
+                    }
+                }
+                
+            }
+        }
+        /*.slick-active{
+            height:12em;
+            margin-top:0;
+            margin-bottom:0;
+            div{
+                a{
+                    pointer-events: auto;
+                    .sliderImage{
+                        filter:blur(0px);
+                    }
+                }
+            }
+        }*/
+        .slick-prev, .slick-next{
+            width:40px;
+            height:40px;
+            z-index: 2;
+            //background-color:black;
+            &:before{
+                font-size:40px;
+            }
+        }
+        .slick-prev{
+            left:2em;
+        }
+        .slick-next{right:-2em;}
+    }
+    #appTable{
+        margin-top:2em;
+        padding:1em 0 1em 0;
+        background-color: #ffffff;
+        //border:2px solid black;
+        #title{
+            text-align: center;
+            font-size:1em;
+            color:#469fdb;
+            //border:2px solid black;
+        }
+        #sumWrap{
+            //border:2px solid green;
+            div{
+                padding:0.5em 1em 0.5em 1em;
+                font-size:0.9em;
+                font-weight: 500;
+                span{
+                    color:#469fdb;
+                }
+            }
+        }
+        .react-bootstrap-table{
+            overflow-x:auto;
+            margin:0em 1em 0.5em 1em;
+            //border:2px solid black;
+            .table{
+                table-layout: auto;
+                border-left:none;
+                border-right:none;
+                //border:2px solid green;
+                thead{
+                    tr{
+                        th{
+                            //border:2px solid green;
+                            text-align: center;
+                            font-size:0.8em;
+                            font-weight: 500;
+                            border:none;
+                        }
+                    }
+                }
+                tbody{
+                    tr{
+                        td{
+                            //text-align: center;
+                            //width:5em;
+                            //border:2px solid navy;
+                            padding-right:0;
+                            text-align: center;
+                            color:#4a4a4a;
+                            font-size:0.8em;
+                            border-left:none;
+                            border-right:none;
+                        }
+                        td:nth-child(1){
+                            //max-width:20em;
+                            width:0.5em;
+                            //border:2px solid black;
+                        }
+                        /*td:nth-child(2){
+                            //max-width:20em;
+                            //width:12em;
+                            border:2px solid black;
+                        }
+                        td:nth-child(3),td:nth-child(4){
+                            //max-width:6em;
+                            border:2px solid black;
+                        }*/
+                        td:nth-child(1),td:nth-child(6),td:nth-child(7){
+                            //max-width:7em;
+                            line-height: 4em;
+                            //border:2px solid black;
+                        }
+                        td:nth-child(6),td:nth-child(7){
+                            color:#2e820b;
+                        }
+                    }
+                    .tname{
+                        width:25em;
+                        height:$cellHeight;
+                        display:grid;
+                        grid-template-rows: auto auto;
+                        grid-template-columns: auto 6fr 1fr;
+                        grid-template-areas: 
+                            'nameImage appName category'
+                            'nameImage des des';
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                        //border:2px solid green;
+                        .nameImage{
+                            grid-area: nameImage;
+                            width:4em;
+                            height:4em;
+                            margin-right:1em;
+                            //border:2px solid green;
+                        }
+                        .appName{
+                            grid-area: appName;
+                            text-align: left;
+                            //border:2px solid purple;
+                            a{
+                                color:#469fdb;
+                            }
+                        }
+                        .category{
+                            grid-area: category;
+                            text-align: center;
+                            border-radius: 5px;
+                            color:white;
+                            background-color:#469fdb;
+                        }
+                        .des{
+                            grid-area: des;
+                            height:2em;
+                            line-height: 2em;
+                            white-space: nowrap; 
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            //border:2px solid green;
+                        }
+                    }
+                    .tuser,.tTransac,.tvolume{
+                        width:10em;
+                        height:$cellHeight;
+                        display:grid;
+                        grid-template-rows: auto auto;
+                        grid-template-columns: auto auto;
+                        grid-template-areas:
+                            'noteHours hours'
+                            'noteDays days';
+                        //border:2px solid green;
+                        .noteHours{
+                            grid-area: noteHours;
+                            text-align:right;
+                        }
+                        .noteDays{
+                            grid-area: noteDays;
+                            text-align:right;
+                        }
+                        .hours{
+                            grid-area:hours;
+                            text-align:right;
+                        }
+                        .days{
+                            grid-area:days;
+                            text-align:right;
+                        }
+                    }
+                }
+            }
+        }
+        .react-bootstrap-table-pagination{
+            margin-left:1em;
+            margin-right:1em;
+            //border:2px solid black;
+            .dropdown-menu {
+                .dropdown-item{
+                    a{
+                        color:#469fdb;
+                    }
+                }
+            }
+            .pagination{
+                .page-item{
+                    color:#469fdb;
+                    .page-link{
+                        color:#469fdb;
+                    }
+                }
+                .page-item.active .page-link{
+                    color:white;
+                    background-color: #469fdb;
+                    border-color:#469fdb;
+                }
+            }
+        }
+        #note{
+            font-size:0.8em;
+            color:#4a4a4a;
+            margin-left:1em;
+            margin-right:1em;
+        }
+    }
+    #appStore{
+        width:100%;
+        padding:0 1em 1em 2em;
+        margin:2em 0 2em 0;
+        background-color:#ffffff;
+        #storeTitle{
+            text-align: center;
+            font-size:1.5em;
+            padding:1em 0 1em 0;
+            //border:2px solid black;
+        }
+        #apps{
+            //border:2px solid black;
+            .storeImage{
+                //border:2px solid black;
+            }
+        }
+    }
+}
+
+

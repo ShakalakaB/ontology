@@ -33,7 +33,6 @@ class Ontology extends React.Component{
           <NavbarS onClick={this.langChoose} lang={this.state.langCho} />
           <Routes onClick={this.langChoose} lang={this.state.langCho} />
           {/*<Test />*/}
-          {/*<Homepage />*/}
         </div>
       );
     }
