@@ -6,6 +6,7 @@ import DappList from './DappList';
 //import Block from './Explorer';
 import {Explorer,Block} from './Explorer';
 import Test from './Test';
+import Home from './Home';
 /*import Home from './Home';
 import Category from './Category';
 import Products from './Products';*/
@@ -24,7 +25,7 @@ class Routes extends React.Component{
                         render={(props)=><DappList {...props} lang={this.props.lang}></DappList>} />
                     <Route path='/explorer' 
                         render={(props)=><ExplorerRoute {...props} lang={this.props.lang}></ExplorerRoute>} />
-                    <Route render={(props)=><Homepage {...props} lang={this.props.lang} langCho={this.props.onClick}></Homepage>} />
+                    <Route component={Homepage} />
                     {/*<Route path='/explorer' 
                         render={(props)=><Explorer {...props} lang={this.props.lang}></Explorer>} />
                     {/*<Route exact path='/' component={Homepage} />
