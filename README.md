@@ -5,6 +5,11 @@ load speed
 store user's choice of lang
 
 Violation] Forced reflow while executing JavaScript took 55ms
+
+when use import .. from ..., when add {} , when not needed
+webpack bundle.js dist
+what would happen if not write function in componentDidMount()
+React.createRef() https://reactjs.org/docs/refs-and-the-dom.html
 ### Navbar: 
 
 + customize bootstrap
@@ -20,4 +25,3 @@ partner on iphone
 
 **DappList**
 AppSlider responsive breakpoint 2000?
-function nameFormatter, `<img className="nameImage" src= {require("../images/DappList/"+test)}>`

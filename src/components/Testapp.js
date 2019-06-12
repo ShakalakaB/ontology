@@ -2,11 +2,14 @@ import React from 'react';
 import {Navbar,Nav,NavItem,Dropdown} from 'react-bootstrap';
 import { Link, Route, Switch } from 'react-router-dom';
 import {LinkContainer} from 'react-router-bootstrap';
-import Mainroutes from './Routes';
+import TestRoutes from './TestRoutes';
 
 
   /* App component */
   class Testapp extends React.Component {
+    constructor(props){
+        super(props);
+    }
     render() {
       return (
         <div>
@@ -32,7 +35,7 @@ import Mainroutes from './Routes';
             </Navbar.Collapse>
       </Navbar>
             /* Route components are rendered if the path prop matches the current URL */
-      <Mainroutes />
+          <TestRoutes />
         </div>
       )
     }

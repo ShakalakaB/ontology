@@ -1,3 +1,9 @@
+let blockDataIni=[];
+for (let i=3000000;i<3000100;i++){
+  let seconds=(Math.floor((Math.random()*10)+1));
+  blockDataIni.unshift({num:i,timeLen:seconds});
+}
+export {blockDataIni};
 export const navBackground='transparent';
 export const navTogBackground='#2FA3F1';
 export const mdBreakpoint=991.98;
