@@ -25,3 +25,7 @@ partner on iphone
 
 **DappList**
 AppSlider responsive breakpoint 2000?
+
+**Explorer**
+search width sm
+blockList undone
