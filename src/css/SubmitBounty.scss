@@ -1,0 +1,90 @@
+@import "../node_modules/bootstrap/scss/_functions.scss";
+@import "../node_modules/bootstrap/scss/_variables.scss";
+@import "../node_modules/bootstrap/scss/mixins/_breakpoints.scss";
+
+@include media-breakpoint-up(lg){
+    #submitBounty{
+        padding:5em 4em 4em 4em;
+        #buttons{
+            display:flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+    }
+}
+@include  media-breakpoint-down(md){
+    #submitBounty{
+        padding:5em 4em 4em 4em;
+    }
+}
+@include  media-breakpoint-down(sm){
+    #submitBounty{
+        padding:5em 1em 4em 1em;
+    }
+}
+@include  media-breakpoint-down(xs){
+    #submitBounty{
+        padding:5em 1em 4em 1em;
+        #buttons{
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+            #back{
+                margin-bottom: 2em;
+            }
+        }
+    }
+    
+}
+#submitBounty{
+    //padding:5em 4em 4em 4em;
+    background-color: #06262b;
+    color:#d8d8d8;
+    border:2px solid orange;
+    #title{
+        font-size:2em;
+        color:#32a4be;
+        text-align: center;
+    }
+    div{
+        word-wrap:break-word;
+        word-break: break-all;
+        margin-top:2em;
+        margin-bottom: 0.5em;
+    }
+    textarea{
+        width: 100%;
+        max-width:33em;
+        box-sizing: border-box;
+    }
+    .input{
+        width: 100%;
+        max-width: 16em;
+        box-sizing: border-box;
+        padding:0 0.5em 0 0.5em;
+        &::placeholder{
+            font-size:0.8em;
+        }
+    }
+    #buttons{
+        margin-top:3em;
+        //border:2px solid white;
+        #back,#submit{
+            width: 100%;
+            height:2em;
+            max-width:10em;
+            margin-right: 2em;
+            box-sizing: border-box;
+        }
+        #back{
+            color:#32a4be;
+            background-color: transparent;
+            border:2px solid #32a4be;
+        }
+        #submit{
+            color:white;
+            border:#32a4be;
+            background-color: #32a4be;
+        }
+    }
+}

@@ -1,0 +1,439 @@
+@import "../node_modules/bootstrap/scss/_functions.scss";
+@import "../node_modules/bootstrap/scss/_variables.scss";
+@import "../node_modules/bootstrap/scss/mixins/_breakpoints.scss";
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:900i&display=swap');
+
+@include media-breakpoint-up(lg){
+    #bounty{
+        #active{
+            #activeTitle{
+                padding-left: 1em;
+            }
+            #activeBlo{
+                display: grid;
+                grid-template-rows: auto auto auto auto;
+                grid-template-columns: auto auto auto auto;
+            }
+        }
+        #progressWrap{
+            #progress{
+                //margin:0 auto 0 auto;
+                #proBlo{
+                    display:grid;
+                    grid-template-rows: repeat(10,auto);
+                    grid-template-columns: auto auto;
+                    grid-column-gap: 1em;
+                    .proBorder{
+                        max-width:25em;
+                        margin-bottom: 1em;
+                    }
+                }
+            }
+        }
+        #doneWrap{
+            #doneBlo{
+                grid-gap: 1em;
+                display:grid;
+                grid-template-rows: repeat(10,auto);
+                grid-template-columns: auto auto;
+            }
+        }
+    }
+}
+@include media-breakpoint-down(md){
+    #bounty{
+        #active{
+            #activeTitle{
+                padding-left: 1em;
+            }
+            #activeBlo{
+                display: grid;
+                grid-template-rows: auto auto auto auto auto auto auto;
+                grid-template-columns: auto auto auto;
+            }
+        }
+        #progressWrap{
+            #progress{
+                #proBlo{
+                    //border:2px solid orangered;
+                    display:grid;
+                    grid-template-rows: repeat(10,auto);
+                    grid-template-columns: auto auto;
+                    grid-column-gap: 1em;
+                    .proBorder{
+                        max-width:19em;
+                        margin-bottom: 1em;
+                    }
+                }
+            }
+        }
+        #doneWrap{
+            #doneBlo{
+                grid-gap: 1em;
+                display:grid;
+                grid-template-rows: repeat(10,auto);
+                grid-template-columns: auto auto;
+                .doneBor{
+                    max-width:20em;
+                }
+            }
+        }
+    }
+}
+@include media-breakpoint-down(sm){
+    #bounty{
+        #active{
+            #activeTitle{
+                padding-left: 1em;
+            }
+            #activeBlo{
+                display: grid;
+                grid-template-rows: auto auto auto auto auto;
+                grid-template-columns: auto auto;
+            }
+        }
+        #progressWrap{
+            #progress{
+                #proBlo{
+                    display:flex;
+                    flex-direction: column;
+                    align-items: center;
+                    //border:2px solid orangered;
+                    .proBorder{
+                        margin:0 0.5em 1em 0.5em;
+                        width:100%;
+                    }
+                }
+            }
+        }
+        #doneWrap{
+            #doneBlo{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                .doneBor{
+                    width:100%;
+                    margin-bottom: 1em;
+                    max-width:20em;
+                }
+            }
+        }
+    }
+}
+@include media-breakpoint-down(xs){
+    #bounty{
+        #active{
+            #activeTitle{
+                padding-left: 1em;
+            }
+            #activeBlo{
+                display: flex;
+                flex-direction: column;
+            }
+        }
+        #progressWrap{
+            #progress{
+                #proBlo{
+                    .proBorder{
+                        margin:0 0.5em 1em 0.5em;
+                        //width:100%;
+                        //background-color: navy;
+                    }
+                }
+            }
+        }
+    }
+}
+#bounty{
+    background-color:rgba(0,0,0,0.8);
+    #bountyIntro{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        color:white;
+        padding-top:4em;
+        //background-color:rgba(0,0,0,0.8);
+        //background-color: #2c3e50;
+        #introTitle{
+            font-size:2em;
+        }
+        #suggestion,#faq{
+            margin-top:1em;
+            max-width:25em;
+            text-align: center;
+            a{
+                color:#32a4be;
+            }
+        }
+    }
+    #active{
+        max-width:$maxWidth;
+        margin:2em auto 0 auto;
+        //border:4px solid white;
+        #activeTitle{
+            padding-bottom: 1em;
+            font-size: 1.5em;
+            font-weight: bold;
+            color:#32a4be;
+            //border:4px solid white;
+        }
+        #activeBlo{
+            //padding-left:3em;
+            //border:4px solid white;
+            #bountyAct{
+                margin:0 auto 1em auto;
+                //width:18em;
+                //border:2px solid orange;
+                #flip{
+                    position: relative;
+                    width:$bountyActiveWidth;
+                    height:15em;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-end;
+                    align-items: center;
+                    background-color: rgba(13,24,26,.85);
+                    border:4px solid #fff849;
+                    &:hover >#flipCon{
+                        visibility: visible;
+                    }
+                    #flipCon{
+                        position: absolute;
+                        top:0;
+                        left:0;
+                        width:100%;
+                        height:100%;
+                        background-color: #000;
+                        color:white;
+                        z-index: 2;
+                        visibility: hidden;
+                    }
+                    #circle{
+                        position: relative;
+                        height: 5em;
+                        width: 5em;
+                        border-radius: 50%;
+                        border:2px solid rgba(255,255,255,0.3);
+                        display:flex;
+                        justify-content: center;
+                        align-items: center;
+                        //display: inline-block;
+                        #new{
+                            position: absolute;
+                            top:-0.6em;
+                            right:-1.5em;
+                            color:white;
+                            font-weight: bold;
+                            font-size:1.2em;
+                            font-style: italic;
+                            font-family: "Source Sans Pro","Helvetica Neue", "Arial", sans-serif;
+                        }
+                        #bountyIcon{
+                            color:#fff849;
+                        }
+                    }
+                    #bountyName{
+                        //font-family:"Source Sans Pro";
+                        color:white;
+                        font-weight: bold;
+                        margin-bottom: 2em;
+                        margin-top:1em;
+                    }
+                    #bountyDes{
+                        font-size:1.2em;
+                        padding:0.3em 0 0.3em 0;
+                        color:#32a4be;
+                        font-weight:bold;
+                    }
+                }
+                #action{
+                    width:$bountyActiveWidth;
+                    //height:2em;
+                    //width:100%;
+                    text-align: center;
+                    font-weight: bold;
+                    padding:0.3em 0 0.3em 0;
+                    //font-size:1.2em;
+                    background-color: #fff849;
+                    &:hover{
+                        cursor:pointer;
+                    }
+                }
+            }
+            .bountyAct{
+                margin:0 auto 1em auto;
+                //width:18em;
+                //border:2px solid orange;
+                .flip{
+                    position: relative;
+                    width:$bountyActiveWidth;
+                    height:15em;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-end;
+                    align-items: center;
+                    background-color: rgba(13,24,26,.85);
+                    //border:4px solid #fff849;
+                    &:hover >.flipCon{
+                        visibility: visible;
+                    }
+                    .flipCon{
+                        position: absolute;
+                        top:0;
+                        left:0;
+                        width:100%;
+                        height:100%;
+                        padding:5em 0.5em 0 0.5em;
+                        text-align: center;
+                        background-color: #000;
+                        color:white;
+                        z-index: 2;
+                        visibility: hidden;
+                    }
+                    .circle{
+                        position: relative;
+                        height: 5em;
+                        width: 5em;
+                        border-radius: 50%;
+                        border:2px solid rgba(255,255,255,0.3);
+                        display:flex;
+                        justify-content: center;
+                        align-items: center;
+                        //display: inline-block;
+                        .bountyIcon{
+                            color:#0aa5c9;
+                        }
+                    }
+                    .bountyName{
+                        height:6em;
+                        //font-family:"Source Sans Pro";
+                        color:white;
+                        font-weight: bold;
+                        text-align: center;
+                        padding: 1em 0.5em 2em 0.5em;
+                        //border:2px solid white;
+                    }
+                    .bountyDes{
+                        font-size:1.2em;
+                        padding:0.3em 0 0.3em 0;
+                        color:#32a4be;
+                        font-weight:bold;
+                        //border:2px solid white;
+                    }
+                }
+                .action{
+                    width:$bountyActiveWidth;
+                    //height:2em;
+                    //width:100%;
+                    text-align: center;
+                    font-weight: bold;
+                    padding:0.3em 0 0.3em 0;
+                    //font-size:1.2em;
+                    background-color: #0aa5c9;
+                    a{
+                        color:white;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+    #progressWrap{
+        background-color:#13343b;
+        margin:2em 0 0 0;
+        //border:2px solid white;
+        #progress{
+            margin:0 auto 0 auto;
+            padding:0 1em 0 1em;
+            max-width:$maxWidth;
+            //border:2px solid white;       
+            #proTitle{
+                padding-top: 1em;
+                padding-bottom: 0.5em;
+                font-size: 1.5em;
+                font-weight: bold;
+                color:#ff9a49;
+            }
+            #proBlo{
+                .proBorder{
+                    //max-width:26em;
+                    padding:2em 1em 2em 1em;
+                    border:1px solid #ff9a49;
+                    box-shadow: 0 0 4px 0 #ff9a49;
+                    .proNameWrap{
+                        //height:2em;
+                        display:flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        .proName{
+                            color:white;
+                            font-weight: 700;
+                            //border:2px solid white;
+                        }
+                        .link{
+                            color:white;
+                            //border:2px solid white;
+                            &:hover{
+                                color:#ff9a49;
+                            }
+                        }
+                    }
+                    .proAuthor{
+                        text-align: right;
+                        font-size:0.8em;
+                        color:white;
+                        span{
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    #doneWrap{
+        padding:2em 0 2em 0;
+        background-color:#13343b;
+        #done{
+            max-width: $maxWidth;
+            margin:0 auto 0 auto;
+            padding:0 1em 0 1em;
+            #doneTitle{
+                padding-top: 1em;
+                padding-bottom: 0.5em;
+                font-size: 1.5em;
+                font-weight: bold;
+                color:#2cbe4e;
+            }
+            #doneBlo{
+                //border:2px solid white;
+                .doneBor{
+                    color:white;
+                    padding:2em 1em 2em 1em;
+                    border:1px solid rgba(44,190,78,.6);
+                    box-shadow: 0 0 5px 0 rgba(44,190,78,.6);
+                    background-color: rgba(190,223,230,.1);
+                    .doneName{
+                        font-weight: 700;
+                        margin-bottom: 0.5em;
+                    }
+                    .doneAuthor{
+                        margin-bottom: 1em;
+                        text-align: right;
+                        font-size:0.8em;
+                    }
+                    .result{
+                        text-align:center;
+                        padding-top:1em;
+                        font-size:0.8em;
+                        font-weight: bold;
+                        color:#888;
+                        border-top:1px solid rgba(255,255,255,0.15);
+                        .doneLink{
+                            color:white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,7 +1,6 @@
 import React from 'react';
 import { LinkContainer } from 'react-router-bootstrap';
 import * as d3 from "d3";
-import Footer from './Footer';
 import { blockDataIni } from "../constants";
 let database = JSON.parse(JSON.stringify(blockDataIni));
 let numStart = 3000100;
@@ -25,6 +24,7 @@ class Explorer extends React.Component {
         //this.redrawChart=this.redrawChart.bind(this);
     }
     componentDidMount() {
+        this._blockState = true;
         this.svgSize();
         window.addEventListener("resize", this.svgSize);
         let setTime = new Date();
@@ -34,7 +34,6 @@ class Explorer extends React.Component {
             e['time'] = setTime;
             e['timeStr'] = blockTime;
         })
-        this._blockState = true;
         this.topCatch();
         setTimeout(() => this.blockData(), 1000);
         this.topBlo = setInterval(() => this.topCatch(), 10000);
@@ -48,21 +47,21 @@ class Explorer extends React.Component {
         window.removeEventListener("resize", this.svgSize);
     }
     blockData() {
-        //console.log(new Date())
-        let setTime = new Date();
-        let strTime = setTime.toString().split(' ');
-        let blockTime = strTime[3] + '-' + setTime.getMonth() + '-' + strTime[2] + ' ' + strTime[4];
-        let blTimeLength = (setTime - database[0]['time']) / 1000;
-        database.unshift({ num: numStart, time: setTime, timeStr: blockTime, timeLen: blTimeLength });
-        setTimeout(()=>{this.setState({
-            blockHeight:numStart,
-            blockSum:database.length
-            });
-        },1);
-        this.drawChart();
-        //this.redrawChart();
-        numStart++;
         if (this._blockState) {
+            //console.log(new Date())
+            let setTime = new Date();
+            let strTime = setTime.toString().split(' ');
+            let blockTime = strTime[3] + '-' + setTime.getMonth() + '-' + strTime[2] + ' ' + strTime[4];
+            let blTimeLength = (setTime - database[0]['time']) / 1000;
+            database.unshift({ num: numStart, time: setTime, timeStr: blockTime, timeLen: blTimeLength });
+            setTimeout(()=>{this.setState({
+                blockHeight:numStart,
+                blockSum:database.length
+                });
+            },1);
+            this.drawChart();
+            //this.redrawChart();
+            numStart++;
             setTimeout(() => this.blockData(), randomSec());
         } else {
             numStart = 3000100;
@@ -176,7 +175,7 @@ class Explorer extends React.Component {
                         {blockList}
                     </div>
                 </div>
-                <Footer />
+                {/*<Footer />*/}
             </div>
         );
     }
@@ -257,10 +256,10 @@ class Block extends React.Component {
                             </table>
                         </div>
                     </div>
-                    <Footer />
+                    {/*<Footer />*/}
                 </div>
             )
         }
     }
 }
-export { Explorer, Block }
+export { Explorer, Block };

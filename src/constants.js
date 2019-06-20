@@ -11,7 +11,7 @@ export const smBreakpoint=767.98;
 export const navContent={
     chinese:[{id:1,
               dropToggle:'开发者',
-              dropItem:['Bounty Program','区块链浏览器']
+              dropItem:['Bounty 项目','区块链浏览器']
             },{id:2,
               dropToggle:'dApps',
               dropItem:['dApps列表','提交应用']
@@ -497,3 +497,180 @@ export const dAppdata = [{
       weeklyReward:'0',
       totalReward:'0'
     }];
+
+export const bountyActive=[{
+  icon:"bug",
+  name:"Bug Bounty Program",
+  des:"Up to 6400 ONG",
+  flipCon:"We have a security vulnerability and threat intelligence bounty program with SlowMist."
+},{
+  icon:"cubes",
+  name:"Ontology SDK for Cocos",
+  des:"1,000+ ONG",
+  flipCon:"Building the Ontology SDK for Cocos"
+},{
+  icon:"angle-double-right",
+  name:"Vedio Tutorials",
+  des:"200+ ONG",
+  flipCon:"Make complete series of video tutorials"
+},{
+  icon:"angle-double-right",
+  name:"Documentation Architecture",
+  des:"800+ ONG",
+  flipCon:"Make complete series of video tutorials"
+},{
+  icon:['fab','laravel'],
+  name:"One-Click Deployment Platform for STO",
+  des:"8000+ ONG",
+  flipCon:"One-click deployment platform for STO"
+},{
+  icon:"cubes",
+  name:"Streaming API for Ontology",
+  des:"1000+ ONG",
+  flipCon:"Building API for Ontology with Streaming Capability"
+},{
+  icon:"cog",
+  name:"NeoVM",
+  des:"2600+ ONG",
+  flipCon:"Please Re-Implementing NeoVM in RUST language based on Ontology's implementation."
+},{
+  icon:"cubes",
+  name:"Cyano(Desktop Version)",
+  des:"1300+ ONG",
+  flipCon:"Cyano (desktop version)"
+},{
+  icon:['far','check-square'],
+  name:"Punica-box",
+  des:"300+ ONG",
+  flipCon:"Please develop a Punica-box (dApp demo or template) which can be downloaded from Punica command line."
+},{
+  icon:['far','plus-square'],
+  name:"Trezor Intergration",
+  des:"1000+ ONG",
+  flipCon:"Integration with Trezor ONE and model T."
+},{
+  icon:"angle-double-right",
+  name:"Hardware Acceleration",
+  des:"2600+ ONG",
+  flipCon:"Use FPGAs to parallel verify ECDSA signatures with curve NIST P-256."
+},{
+  icon:['far','edit'],
+  name:"Anonymous Credential",
+  des:"700+ ONG",
+  flipCon:"Implementing anonymous credential scheme in different languages and integrating it in SDKs. "
+},{
+  icon:['fab','laravel'],
+  name:"SDKs",
+  des:"1300+ ONG",
+  flipCon:"We are using Java/TS SDK, Python, and C++. Swift/Kotlin and other SDKs are welcome."
+}]
+export const progressBounty=[{
+  name:'SDK (C#)',
+  author:'L. Hussain Team'
+},{
+  name:'Vedio Tutorials',
+  author:'TowerBuilders'
+},{
+  name:'Documentation Architecture',
+  author:'TowerBuilders'
+},{
+  name:'NeoVM in Rust',
+  author:'M. Mitsuzawa Team'
+},{
+  name:'One-Click Deployment Platform for STO',
+  author:'Tower Builders Team'
+},{
+  name:'Ontology Index Project',
+  author:'D. Hubbard Team'
+},{
+  name:'Cyano (Desktop Version)',
+  author:'M. Zamborsky Team'
+},{
+  name:'SDK (C++)',
+  author:'A. Skumina Team'
+},{
+  name:'SDK (PHP)',
+  author:'R. Tian Team',
+  url:true
+},{
+  name:'Anonymous Credential (Python)',
+  author:'B. Anastasiia Team',
+  url:true
+},{
+  name:'SDK (Swift)',
+  author:'R. Rao B Team'
+},{
+  name:'SDK (Swift)',
+  author:'B. Sun Team',
+  url:true
+},{
+  name:'Japanese Documentation Translation',
+  author:'Aiko Team'
+},{
+  name:'SDK (Swift)',
+  author:'A. Chen Team'
+},{
+  name:'One-Click Blockchain',
+  author:'G.Y.Yin Team',
+  url:true
+},{
+  name:'Trezor Integration',
+  author:'M.Zamborsky Team'
+},{
+  name:'Hardware Acceleration',
+  author:'X.Dong Team'
+},{
+  name:'Anonymous Credential',
+  author:'Y.Mari Team'
+},
+];
+export const doneBounty=[{
+  name:'Ontology Nodes Distribution',
+  author:'Fyz Team'
+},{
+  name:'SDK (C#)',
+  author:'Panther Team',
+  url:true
+},{
+  name:'Ontology SDK for Unity3D',
+  author:'Joe Team',
+  url:true
+},{
+  name:'Cyano (Mobile Version)',
+  author:'S. Hsiao Team',
+  url:true
+},{
+  name:'SDK (Dart)',
+  author:'S. Hsiao Team',
+  url:true
+},{
+  name:'SDK (Swift)',
+  author:'W. Mufson Team'
+},{
+  name:'New Functionalities for Cyano',
+  author:'M. Zamborsky Team'
+},{
+  name:'Toolkits Introduction Video',
+  author:'Y. Zhao Team'
+},{
+  name:'Improvement of (Partial) Toolkit Documents',
+  author:'N. Fujita Team'
+},{
+  name:'Improvement of (Partial) Toolkit Documents',
+  author:'Pather Team'
+},{
+  name:'SDK (Objective-C)',
+  author:'A. Zhang Team',
+  url:true
+},];
+export const trustAnchorBanner={
+  "chinese":"信任锚指为Ontology生态系统提供认证服务的合作伙伴，诸如政府机构，高校，银行，第三方认证服务机构，或生物测量技术公司等。它们将为Ontology中 ONT ID拥有者提供多元的认证服务，并在第一时间通过Ontology记录认证行为和认证结果HASH码，以此实现标准和可靠的认证服务。",
+  "english":"Trust Anchor refers to the partner that provides authentication services on the ontology ecosystem. It may be government agencies, universities, banks, third-party authentication service agencies (such as CA agencies), biometric technology companies, etc. These trust anchor provide multi-dimensional authentication for the owner of the ontology ONT ID, and record the authentication behavior and the authentication result HASH through the Ontology Blockchain at the first time, thus providing standardized and credible for the user authentication requirment."
+};
+export const trustAnchorImages=[
+  require("./images/TrustAnchor/logo1.png"),
+  require("./images/TrustAnchor/logo2.png"),
+  require("./images/TrustAnchor/logo3.png"),
+  require("./images/TrustAnchor/logo4.png"),
+  require("./images/TrustAnchor/logo5.png")
+];

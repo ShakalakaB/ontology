@@ -1,6 +1,7 @@
 import React from 'react';
 import NavbarS from './NavbarS';
 import Routes from './Routes';
+import Footer from './Footer';
 
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../index.scss';
@@ -32,6 +33,7 @@ class Ontology extends React.Component{
         <div>
           <NavbarS onClick={this.langChoose} lang={this.state.langCho} />
           <Routes onClick={this.langChoose} lang={this.state.langCho} />
+          <Footer onClick={this.langChoose} lang={this.state.langCho} />
           {/*<Test />*/}
         </div>
       );

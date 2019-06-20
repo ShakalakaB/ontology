@@ -1,0 +1,157 @@
+@import "../node_modules/bootstrap/scss/_functions.scss";
+@import "../node_modules/bootstrap/scss/_variables.scss";
+@import "../node_modules/bootstrap/scss/mixins/_breakpoints.scss";
+
+@include media-breakpoint-up(lg){
+    #trustAnchor{
+        #banner{
+            height:$backgroundImageHeight;
+            #bannerFlex{
+                display:flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+            }
+            #bannerBottom{
+                .image{
+                    height:2em;
+                }
+            }
+            #image1{
+                min-height:160px;
+            }
+            #image2{
+                //min-height:160px;
+                visibility: hidden;
+            }
+        }
+    }
+}
+@include media-breakpoint-down(md){
+    #trustAnchor{
+        #banner{
+            height:958px;
+            #bannerFlex{
+                display:flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items:center ;
+            }
+            #bannerBottom{
+                .image{
+                    height:2em;
+                }
+            }
+            #image1{
+                visibility: hidden;
+            }
+            #image2{
+                height:273px;
+                //visibility: hidden;
+            }
+        }
+    }
+}
+@include media-breakpoint-down(sm){
+    #trustAnchor{
+        #banner{
+            height:1058px;
+            #bannerFlex{
+                display:flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items:center ;
+            }
+            #bannerBottom{
+                .image{
+                    height:1.5em;
+                }
+            }
+            #image1{
+                visibility: hidden;
+            }
+            #image2{
+                height:273px;
+                //visibility: hidden;
+            }
+        }
+    }
+}
+@include media-breakpoint-down(xs){
+    #trustAnchor{
+        #banner{
+            height:1558px;
+            #bannerFlex{
+                display:flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items:center ;
+                #des{
+                    //line-height: 90%;
+                    font-size:0.8em;
+                    overflow: hidden;
+                }
+            }
+            #bannerBottom{
+                .image{
+                    height:1em;
+                }
+            }
+            #image1{
+                visibility: hidden;
+            }
+            #image2{
+                height:330px;
+                //visibility: hidden;
+            }
+        }
+    }
+}
+#trustAnchor{
+    #banner{
+        position: relative;
+        padding-top:5em;
+        color:white;
+        background: linear-gradient(1turn,#61d1e0,#49bacf 45%,#32a4be);
+        //background-image: url("./images/TrustAnchor/bannerBottom.png");
+        #title{
+            text-align: center;
+            font-size:2em;
+        }
+        #bannerFlex{
+            margin-top:2em;
+            #bannerIcon{
+                margin:0 2em 1em 2em;
+                max-height:8em;
+                //border:2px solid white;
+            }
+            #des{
+                color:#c2e7f3;
+                font-size:0.9em;
+                max-width:40em;
+                margin:0 2em 0 2em;
+                //border:2px solid white;
+            }
+        }
+        #bannerBottom{
+            width:100%;
+            position: absolute;
+            bottom:2em;
+            left:0;
+            display:flex;
+            flex-wrap:wrap;
+            justify-content: center;
+            z-index: 2;
+            //border:2px solid green;
+            .image{
+                //width:em;
+                margin:2em 1em 0 1em;
+            }
+        }
+        .bottomImage{
+            position: absolute;
+            bottom:0;
+            width:100%;
+        }
+    }
+}

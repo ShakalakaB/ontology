@@ -354,8 +354,9 @@
 #header{
     width:100%;
     padding-top:12em;
-    height:758px;
-    //background-color: rgba(0,0,0,0.3);
+    height:$backgroundImageHeight;
+    position: relative;
+    background-color:transparent;
     background-image: url("./images/Home.jpg");
     //border:2px solid red;
     #headerText1{
@@ -386,6 +387,19 @@
         border:none;
         border-radius: 5px;
     }
+    //#headerText1,#headerText2,#headerLink{
+    /*#headerText1{
+        animation:slideUp 2s ease forwards;
+        -webkit-animation:slideUp 2s ease forwards;
+    }
+    @keyframes slideUp{
+        from{transform:translateY(100px)}
+        to{transform:translateY(0)}
+    }
+    @-webkit-keyframes slideUp{
+        from{transform:translateY(100px)}
+        to{transform:translateY(0)}
+    }*/
     #homeImage{
         position: absolute;
         top:0;

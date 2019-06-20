@@ -168,8 +168,8 @@ class Footer extends React.Component{
                                 <FontAwesomeIcon style={this.state.langIconSty} id="langIcon" icon="angle-down" size="lg" />
                             </Dropdown.Toggle>
                             <Dropdown.Menu id="langMenu">
-                                <Dropdown.Item className="langItem" id="chinese" onClick={this.props.langCho}>中文</Dropdown.Item>
-                                <Dropdown.Item className="langItem" id="english" onClick={this.props.langCho}>English</Dropdown.Item>
+                                <Dropdown.Item className="langItem" id="chinese" onClick={this.props.onClick}>中文</Dropdown.Item>
+                                <Dropdown.Item className="langItem" id="english" onClick={this.props.onClick}>English</Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown>
                     </div>

@@ -1,0 +1,482 @@
+@import "../node_modules/bootstrap/scss/_functions.scss";
+@import "../node_modules/bootstrap/scss/_variables.scss";
+@import "../node_modules/bootstrap/scss/mixins/_breakpoints.scss";
+@mixin uploadInput{
+    top:0;
+    left:0;
+    position: absolute;
+    border:none;
+    cursor:pointer;
+    opacity: 0;
+    outline:0;
+}
+@include media-breakpoint-up(lg){
+    #submitApp{
+        form{
+            .dateGrid,.inputGrid{
+                display: grid;
+                grid-template-rows: auto auto;
+                grid-template-columns: 1fr 1fr;
+            }
+            .radioSelection{
+                display: grid;
+                grid-template-rows: auto auto;
+                grid-template-columns: auto auto;
+                //border:2px solid black;
+                .inputTitle{
+                    grid-column: 1/3;
+                    margin-bottom: 0.5em;
+                }
+                .radio{
+                    //display: block;
+                    position: relative;
+                    padding-left:2em;
+                    cursor:pointer;
+                    //border:2px solid black;
+                    &:hover input ~ .checkmark{
+                        background-color: #ccc;
+                    }
+                    & input:checked ~.checkmark{
+                        background-color: #2196F3;
+                    }
+                    & input:checked ~.checkmark:after{
+                        display: block;
+                    }
+                    input{
+                        position: absolute;
+                        opacity: 0;
+                        cursor:pointer;
+                    }
+                    .checkmark{
+                        top:0.22em;
+                        left:0.3em;
+                        position: absolute;
+                        width:1em;
+                        height:1em;;
+                        background-color: #eee;
+                        border-radius: 50%;
+                        &:after{
+                            content: '';
+                            position: absolute;
+                            display:none;
+                            top:0.3em;
+                            left:0.3em;
+                            width: 8px;
+                            height: 8px;
+                            border-radius: 50%;
+                            background: white;
+                        }
+                    }
+                }
+            }
+            #contractWrap{
+                #button{
+                    width:9em;
+                }
+            }
+            #submit{
+                width:9em;
+            }
+        }
+    }
+}
+@include media-breakpoint-down(md){
+    #submitApp{
+        form{
+            .dateGrid,.inputGrid{
+                display: grid;
+                grid-template-rows: auto auto;
+                grid-template-columns: 1fr 1fr;
+            }
+            .radioSelection{
+                display: grid;
+                grid-template-rows: auto auto;
+                grid-template-columns: auto auto;
+                //border:2px solid black;
+                .inputTitle{
+                    grid-column: 1/3;
+                    margin-bottom: 0.5em;
+                }
+                .radio{
+                    //display: block;
+                    position: relative;
+                    padding-left:2em;
+                    cursor:pointer;
+                    //border:2px solid black;
+                    &:hover input ~ .checkmark{
+                        background-color: #ccc;
+                    }
+                    & input:checked ~.checkmark{
+                        background-color: #2196F3;
+                    }
+                    & input:checked ~.checkmark:after{
+                        display: block;
+                    }
+                    input{
+                        position: absolute;
+                        opacity: 0;
+                        cursor:pointer;
+                    }
+                    .checkmark{
+                        top:0.22em;
+                        left:0.3em;
+                        position: absolute;
+                        width:1em;
+                        height:1em;;
+                        background-color: #eee;
+                        border-radius: 50%;
+                        &:after{
+                            content: '';
+                            position: absolute;
+                            display:none;
+                            top:0.3em;
+                            left:0.3em;
+                            width: 8px;
+                            height: 8px;
+                            border-radius: 50%;
+                            background: white;
+                        }
+                    }
+                }
+            }
+            #contractWrap{
+                #button{
+                    width:9em;
+                }
+            }
+            #submit{
+                width:9em;
+            }
+        }
+    }
+}
+@include media-breakpoint-down(sm){
+    #submitApp{
+        form{
+            .dateGrid{
+                display: block;
+            }
+            .inputGrid{
+                display: grid;
+                grid-template-rows: auto auto auto auto;
+                grid-template-columns: auto;
+                .inputBox{
+                    .smInput{
+                        //border:2px solid green;
+                    }
+                }
+            }
+            .radioSelection{
+                display: grid;
+                grid-template-rows: auto auto auto;
+                grid-template-columns: auto;
+                //border:2px solid black;
+                .inputTitle{
+                    grid-column: 1/2;
+                    margin-bottom: 0.5em;
+                }
+                .radio{
+                    //display: block;
+                    position: relative;
+                    padding-left:2em;
+                    cursor:pointer;
+                    &:hover input ~ .checkmark{
+                        background-color: #ccc;
+                    }
+                    & input:checked ~.checkmark{
+                        background-color: #2196F3;
+                    }
+                    & input:checked ~.checkmark:after{
+                        display: block;
+                    }
+                    input{
+                        position: absolute;
+                        opacity: 0;
+                        cursor:pointer;
+                    }
+                    .checkmark{
+                        top:0.22em;
+                        left:0.3em;
+                        position: absolute;
+                        width:1em;
+                        height:1em;;
+                        background-color: #eee;
+                        border-radius: 50%;
+                        &:after{
+                            content: '';
+                            position: absolute;
+                            display:none;
+                            top:0.3em;
+                            left:0.3em;
+                            width: 8px;
+                            height: 8px;
+                            border-radius: 50%;
+                            background: white;
+                        }
+                    }
+                }
+            }
+            #contractWrap{
+                #button{
+                    width:9em;
+                }
+            }
+            #submit{
+                max-width:9em;
+            }
+        }
+    }
+}
+@include media-breakpoint-down(xs){
+    #submitApp{
+        form{
+            #contractWrap{
+                #button{
+                    width:3em;
+                }
+            }
+            #submit{
+                max-width:3em;
+            }
+        }
+    }
+}
+#submitApp{
+    padding-top:6em;
+    margin:0 1em 2em 1em;
+    //border:2px solid black;
+    #title{
+        font-size:1.2em;
+        text-align: center;
+        margin-bottom: 0.5em;
+    }
+    #subtitle{
+        font-size: 0.8em;
+        text-align: center;
+    }
+    form{
+        max-width: 800px;
+        margin:1.5em auto 0 auto;
+        //border:2px solid black;
+        .contract,.inputBox,.radioSelection{
+            margin-bottom: 1.5em;
+            //border:2px solid red;
+        }
+        .inputBox{
+            //border:2px solid red;
+            .inputTitle{
+                font-size:0.9em;
+                //font-weight: 500;
+                margin-bottom: 0.5em;
+            }
+            .smInput, .mdInput, .lgInput, .xlInput{
+                padding:0.3em 0.5em 0.3em 0.5em;
+                border-style:solid;
+                box-sizing: border-box;
+                width:100%;
+                border:1.1px solid #aab3b4;
+                box-shadow:0 0 0 transparent;
+                border-radius: 5px;
+                -webkit-appearance:none;
+                //max-width:34em;
+                outline:0;
+                &::placeholder{
+                    color:#aab3b4;
+                    font-size:0.8em;
+                }
+            }
+            .smInput{
+                height:1.7em;
+                max-width:17em;
+                //border:2px solid red;
+            }
+            .mdInput{
+                max-width:28em;
+                height:4em;
+                //border:2px solid red;
+            }
+            .lgInput{
+                max-width:28em;
+                height:8em;
+                //border:2px solid green;
+            }
+            .xlInput{
+                max-width:37em;
+                height:8em;
+                //border:2px solid green;
+            }
+            .note{
+                font-size:0.7em;
+                margin-top:0.4em;
+                //border:2px solid green;
+            }
+            .logoUpload{
+                position: relative;
+                max-width:37em;
+                height:8em;
+                width:100%;
+                box-sizing: border-box;
+                display:flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                border-radius: 5px;
+                border:1.1px solid #aab3b4;
+                //border:2px solid black;
+                cursor:pointer;
+                .xlInput{
+                    @include uploadInput;
+                }
+                .uploadNote{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    /*position: absolute;
+                    top:1em;*/
+                    //border:2px solid black; 
+                    .icon{
+                        color:#2196F3;
+                    }
+                    .note{
+                        color:#aab3b4;
+                        font-size:0.9em;
+                        span{
+                            text-decoration: underline;
+                        }
+                    }
+                }
+                .logo{
+                    max-width:100%;
+                    max-height:8em;
+                    overflow: hidden;
+                    //position: absolute;
+                    //border:2px solid orange; 
+                }
+            }
+            .uploadWrap{
+                max-width:37em;
+                display:flex;
+                flex-wrap: wrap;
+                border-radius: 5px;
+                border:1.1px solid #aab3b4;
+                //border:2px solid red;
+                .shootsUpload{
+                    position: relative;
+                    max-width:8em;
+                    height:7em;
+                    margin: 0.5em;
+                    padding:0 0.2em 0 0.2em;
+                    //max-width:37em;
+                    width:100%;
+                    box-sizing: border-box;
+                    cursor:pointer;
+                    display:flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 5px;
+                    //background-color:#f4fcff;
+                    border:1px solid #dde5f2;
+                    //border:1.1px solid #f4fcff;
+                    .xlInput{
+                        @include uploadInput;
+                    }
+                    .uploadNote{
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        //border:2px solid black; 
+                        .icon{
+                            color:#2196F3;
+                        }
+                        .note{
+                            color:#aab3b4;
+                            font-size:0.8em;
+                            //word-wrap:break-word;
+                            //word-break: break-all;
+                            line-height: 90%;
+                            span{
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+                    .shoot{
+                        max-width: 8em;
+                        max-height: 8em;
+                    }
+                }
+            }
+            .fileUpload{
+                @extend .logoUpload;
+                max-width:28em;
+                //height:4em;
+                .mdInput{
+                    @include uploadInput;
+                }
+                .uploadNote{
+                    .icon{
+                        color:#2196F3;
+                        margin-right: 0.5em;
+                    }
+                    .note{
+                        color:#aab3b4;
+                        font-size:0.9em;
+                        span{
+                            text-decoration: underline;
+                        }
+                    }
+                }
+                .fileIcon{
+                    color:#2196F3;
+                }
+            }
+        }
+        #contractWrap{
+            max-width:28em;
+            padding-top: 2em;
+            padding-bottom: 1em;
+             margin-bottom: 1.5em;
+            border-top: 2px solid #aab3b4;
+            border-bottom: 2px solid #aab3b4;
+            .contract{ 
+                .contractTitle{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    .address{
+                        font-weight: bold;
+                    }
+                    .delButton{
+                        color:#2fa3f1;
+                    }
+                }
+            }
+            #button{
+                display: block;
+                margin:0 auto 0 auto;
+                height:1.8em;
+                border-radius: 5px;
+                border-style:solid;
+                border:1px solid #2fa3f1;
+                background-color:white;
+                color:#2fa3f1;
+            }
+            .buttonNote{
+                text-align: center;
+                font-size:0.7em;
+                margin-top:0.4em;
+                cursor:pointer;
+            }
+        }
+        #submit{
+            display: block;
+            height:1.8em;
+            margin:0 auto 0 auto;
+            border-radius: 5px;
+            border-style:solid;
+            border:2px solid #2fa3f1;
+            background-color:#2fa3f1;
+            color:white;
+        }
+    }
+}

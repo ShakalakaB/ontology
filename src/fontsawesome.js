@@ -4,7 +4,16 @@ import {
     faAngleDown,
     faAngleRight,
     faBars,
-    faTimes
+    faTimes,
+    faAngleDoubleRight,
+    faPuzzlePiece,
+    faBug,
+    faCubes,
+    faCog,
+    faEllipsisH,
+    faImage,
+    faFileUpload,
+    faFileAlt
 } from '@fortawesome/free-solid-svg-icons';
 
 import {
@@ -19,8 +28,16 @@ import {
     faTwitterSquare,
     faWeibo,
     faWeixin,
-    faYoutube
+    faYoutube,
+    faLaravel
 } from '@fortawesome/free-brands-svg-icons';
+
+import{
+    faLightbulb,
+    faCheckSquare,
+    faPlusSquare,
+    faEdit
+}from '@fortawesome/free-regular-svg-icons';
 library.add(
     faAngleUp,
     faAngleDown,
@@ -38,5 +55,19 @@ library.add(
     faLinkedin,
     faTencentWeibo,
     faWeixin,
-    faWeibo
+    faWeibo,
+    faAngleDoubleRight,
+    faPuzzlePiece,
+    faBug,
+    faCubes,
+    faCog,
+    faLaravel,
+    faLightbulb,
+    faCheckSquare,
+    faPlusSquare,
+    faEdit,
+    faEllipsisH,
+    faImage,
+    faFileUpload,
+    faFileAlt
 );

@@ -1,21 +1,107 @@
 import React from 'react';
 import {Carousel} from 'react-bootstrap';
+import styled,{ keyframes } from "styled-components";
 
-import Footer from './Footer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '../fontsawesome';
-
+let slideKey=keyframes`
+            0% {transform:translateY(60px)}
+            100%{transform:translateY(0)}`;
+/*let SlideUp=styled.div`
+    animation:${props=>(props.show ?`${slideKey} 5s ease forwards`:`${slideKey} 2s ease forwards`)};
+    webkitAnimation:${props=>(props.show ?`${slideKey} 5s ease forwards`:`${slideKey} 2s ease forwards`)};
+    `;*/
+/*let SlideUp=styled.div`
+    border:${props=>(props.show ?'2px solid white':'2px solid red')};
+    `;*/
+let SlideUp=styled.div`
+    animation:${slideKey} 0.5s ease forwards;
+    webkitAnimation:${slideKey} 0.5s ease forwards;
+`;
+let NoSlideUp=styled.div`
+    transform: translateY(0);
+    animation: none;
+`;
 class Homepage extends React.Component{
     constructor(props){
         super(props);
+        this.state={
+            headerText1:false,
+            introText1:false,
+            introText2:false,
+            introText3:false,
+        }
+        this.handleClick=this.handleClick.bind(this);
+        this.handleScroll=this.handleScroll.bind(this);
+        this.slideUp=this.slideUp.bind(this);
+        this.headerRef=React.createRef();
+        this.intro1Ref=React.createRef();
+        this.intro2Ref=React.createRef();
+        this.intro3Ref=React.createRef();
+    }
+    componentDidMount(){
+        this.slideUp();
+        window.addEventListener('scroll', this.handleScroll);
+    }
+    componentWillUnmount(){
+        window.removeEventListener('scroll', this.handleScroll);
+    }
+    handleScroll(event){
+        this.slideUp();
+    }
+    slideUp(){
+        let headerPos=this.headerRef.current.getBoundingClientRect();
+        let intro1Pos=this.intro1Ref.current.getBoundingClientRect();
+        let intro2Pos=this.intro2Ref.current.getBoundingClientRect();
+        let intro3Pos=this.intro3Ref.current.getBoundingClientRect();
+        let headerTop=headerPos.top;
+        let intro1Top=intro1Pos.top;
+        let intro2Top=intro2Pos.top;
+        let intro3Top=intro3Pos.top;
+        let headerBottom=headerPos.bottom;
+        let intro1Bottom=intro1Pos.bottom;
+        let intro2Bottom=intro2Pos.bottom;
+        let intro3Bottom=intro3Pos.bottom;
+        if(headerTop>=0 && headerBottom<=window.innerHeight){
+            this.setState({
+                headerText1:true
+            });
+        }
+        if(intro1Top>=0 && intro1Bottom<=window.innerHeight){
+            this.setState({
+                introText1:true
+            });
+        }
+        if(intro2Top>=0 && intro2Bottom<=window.innerHeight){
+            this.setState({
+                introText2:true
+            });
+        }
+        if(intro3Top>=0 && intro3Bottom<=window.innerHeight){
+            this.setState({
+                introText3:true
+            });
+        }
+    }
+    handleClick(){
+        this.setState({
+            hearderText1:!this.state.hearderText1
+        });
     }
     render(){
         return(
             <div id="homepage">
+                {/*<div  style={{backgroundImage: `url(require("./images/Home.jpg"))`}} id="header">
+                    <div id="headerText1">Ready for all Businesses</div> */}
                 <div id="header">
-                    <p id="headerText1">Ready for all Businesses</p> 
-                    <p id="headerText2">{this.props.lang?'本体是新一代公有基础链项目和分布式信任协作平台。':'Ontology is a high-performance public blockchain project and a distributed trust collaboration platform.'}</p>
+                    {(this.state.headerText1)?(
+                        <SlideUp id="headerText1" ref={this.headerRef}>Ready for all Businesses</SlideUp>
+                        ):(
+                        <NoSlideUp id="headerText1" ref={this.headerRef}>Ready for all Businesses</NoSlideUp>
+                    )}
+                    <div id="headerText2">{this.props.lang?'本体是新一代公有基础链项目和分布式信任协作平台。':'Ontology is a high-performance public blockchain project and a distributed trust collaboration platform.'}</div>
                     <button id="headerLink">{this.props.lang?'了解更多':'Learn More'}</button>
+                    {/*<img src={require("../images/Home.jpg")} alt="homeBackground"></img>*/}
                 </div>
                 <div id="newsWrap">
                     <div id="newsTop">
@@ -53,28 +139,53 @@ class Homepage extends React.Component{
                 </div>
                 <div id="intro">
                     <div className="introInfo" id="intro1">
-                        <div className="introText">
-                            <div className="introTitle">{this.props.lang?'强大的开发工具':'Powerful tools for powerful dApps'}</div>
-                            <p className="introP">{this.props.lang?'为去中心化应用产品提供支持多种开发语言的多样化开发工具。':'Ontology provides development tools and supports multiple programming languages for decentralized application development.'}</p>
-                            <a href="https://developer.ont.io/" target="_blank" className="introLink">{this.props.lang?'开发者中心':'Learn more in Developer Center'}</a>
-                        </div>
+                        {(this.state.introText1)?(
+                            <SlideUp className="introText">
+                                <div ref={this.intro1Ref} className="introTitle">{this.props.lang?'强大的开发工具':'Powerful tools for powerful dApps'}</div>
+                                <p className="introP">{this.props.lang?'为去中心化应用产品提供支持多种开发语言的多样化开发工具。':'Ontology provides development tools and supports multiple programming languages for decentralized application development.'}</p>
+                                <a href="https://developer.ont.io/" target="_blank" className="introLink">{this.props.lang?'开发者中心':'Learn more in Developer Center'}</a>
+                            </SlideUp>
+                        ):(
+                            <NoSlideUp className="introText">
+                                <div ref={this.intro1Ref} className="introTitle">{this.props.lang?'强大的开发工具':'Powerful tools for powerful dApps'}</div>
+                                <p className="introP">{this.props.lang?'为去中心化应用产品提供支持多种开发语言的多样化开发工具。':'Ontology provides development tools and supports multiple programming languages for decentralized application development.'}</p>
+                                <a href="https://developer.ont.io/" target="_blank" className="introLink">{this.props.lang?'开发者中心':'Learn more in Developer Center'}</a>
+                            </NoSlideUp>
+                        )}
                         <img className="introImages" src={require("../images/Homepage/introImage1.png")} alt="introImage1"></img>
                     </div>
                     <div className="introInfo" id="intro2">
-                        <div className="introText">
-                            <div className="introTitle">{this.props.lang?'定制化区块链服务':'Customizable blockchains'}</div>
-                            <p className="introP">
-                                {this.props.lang?'本体网络框架支持公有链网体系，为不同的场景提供定制服务。同时，本体通过独有的协议群支持跨链合作，为不同场景的应用落地提供可能。':'Ontology blockchain framework supports public blockchain systems and is able to customize public blockchains for applications. Ontology also supports collaboration among chain networks with protocol groups.'}
-                            </p>
-                        </div>
+                        {(this.state.introText2)?(
+                            <SlideUp className="introText">
+                                <div ref={this.intro2Ref} className="introTitle">{this.props.lang?'定制化区块链服务':'Customizable blockchains'}</div>
+                                <p className="introP">
+                                    {this.props.lang?'本体网络框架支持公有链网体系，为不同的场景提供定制服务。同时，本体通过独有的协议群支持跨链合作，为不同场景的应用落地提供可能。':'Ontology blockchain framework supports public blockchain systems and is able to customize public blockchains for applications. Ontology also supports collaboration among chain networks with protocol groups.'}
+                                </p>
+                            </SlideUp>
+                        ):(
+                            <NoSlideUp className="introText">
+                                <div ref={this.intro2Ref} className="introTitle">{this.props.lang?'定制化区块链服务':'Customizable blockchains'}</div>
+                                <p className="introP">
+                                    {this.props.lang?'本体网络框架支持公有链网体系，为不同的场景提供定制服务。同时，本体通过独有的协议群支持跨链合作，为不同场景的应用落地提供可能。':'Ontology blockchain framework supports public blockchain systems and is able to customize public blockchains for applications. Ontology also supports collaboration among chain networks with protocol groups.'}
+                                </p>
+                            </NoSlideUp>
+                        )}
                         <img className="introImages" src={require("../images/Homepage/introImage2.png")} alt="introImage2"></img>
                     </div>
                     <div className="introInfo" id="intro3">
-                        <div className="introText">
-                            <div className="introTitle">{this.props.lang?'可扩展区块链解决方案':'Scalable solutions'}</div>
-                            <p className="introP">{this.props.lang?'凭借高TPS，本体分片设计能够为全球千万区块链用户提供应用支持。':'With high performance features like VBFT and sharding, Ontology is ready to power applications for the world’s millions of blockchain users.'}</p>
-                            <a className="introLink" href="https://medium.com/ontologynetwork/ontology-sharding-design-released-c900331f71fa" target="_blank">{this.props.lang?'本体分片设计':'Learn more about Ontology Sharding'}</a>
-                        </div>
+                        {(this.state.introText3)?(
+                            <SlideUp className="introText">
+                                <div ref={this.intro3Ref} className="introTitle">{this.props.lang?'可扩展区块链解决方案':'Scalable solutions'}</div>
+                                <p className="introP">{this.props.lang?'凭借高TPS，本体分片设计能够为全球千万区块链用户提供应用支持。':'With high performance features like VBFT and sharding, Ontology is ready to power applications for the world’s millions of blockchain users.'}</p>
+                                <a className="introLink" href="https://medium.com/ontologynetwork/ontology-sharding-design-released-c900331f71fa" target="_blank">{this.props.lang?'本体分片设计':'Learn more about Ontology Sharding'}</a>
+                            </SlideUp>
+                        ):(
+                            <NoSlideUp className="introText">
+                               <div ref={this.intro3Ref} className="introTitle">{this.props.lang?'可扩展区块链解决方案':'Scalable solutions'}</div>
+                                <p className="introP">{this.props.lang?'凭借高TPS，本体分片设计能够为全球千万区块链用户提供应用支持。':'With high performance features like VBFT and sharding, Ontology is ready to power applications for the world’s millions of blockchain users.'}</p>
+                                <a className="introLink" href="https://medium.com/ontologynetwork/ontology-sharding-design-released-c900331f71fa" target="_blank">{this.props.lang?'本体分片设计':'Learn more about Ontology Sharding'}</a>
+                            </NoSlideUp>
+                        )}
                         <img className="introImages" src={require("../images/Homepage/introImage3.png")} alt="introImage3"></img>
                     </div>
                 </div>
@@ -175,7 +286,6 @@ class Homepage extends React.Component{
                         </div>
                     </div>
                 </div>
-                <Footer lang={this.props.lang} />
             </div>
         );
     }

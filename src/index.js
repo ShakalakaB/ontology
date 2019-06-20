@@ -9,7 +9,7 @@ localStorage.setItem('practiceProject','Ontology');
 
 ReactDOM.render((
 <HashRouter>
-  <Ontology />,
+  <Ontology />
 </HashRouter>),
   document.getElementById('ontology')
 );

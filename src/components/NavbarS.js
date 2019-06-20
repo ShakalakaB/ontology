@@ -156,7 +156,9 @@ class NavbarS extends React.Component{
                                     <FontAwesomeIcon id='icon1' className="navIcon" icon="angle-down" size="lg"/>
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu className="dropMenu">
-                                    <Dropdown.Item className="item">{navText[0]['dropItem'][0]}</Dropdown.Item>
+                                    <LinkContainer to="/bounty">
+                                        <Dropdown.Item className="item">{navText[0]['dropItem'][0]}</Dropdown.Item>
+                                    </LinkContainer>
                                     <LinkContainer to="/explorer">
                                         <Dropdown.Item className="item">{navText[0]['dropItem'][1]}</Dropdown.Item>
                                     </LinkContainer>
@@ -170,7 +172,9 @@ class NavbarS extends React.Component{
                                     <LinkContainer to="/dapplist">
                                         <Dropdown.Item className="item">{navText[1]['dropItem'][0]}</Dropdown.Item>
                                     </LinkContainer>
-                                    <Dropdown.Item className="item">{navText[1]['dropItem'][1]}</Dropdown.Item>
+                                    <LinkContainer to="/submit_dapp">
+                                        <Dropdown.Item className="item">{navText[1]['dropItem'][1]}</Dropdown.Item>
+                                    </LinkContainer>
                                 </Dropdown.Menu>
                             </Dropdown>
                             <Dropdown id='dropdown3' onClick={this.iconRotate} onToggle={this.textToggle} onMouseEnter={this.mouEnter}  onMouseLeave={this.mouLea} className="dropdown" as={NavItem}>
@@ -178,7 +182,9 @@ class NavbarS extends React.Component{
                                     <FontAwesomeIcon id='icon3' className="navIcon" icon="angle-down" size="lg"/>
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu className="dropMenu">
+                                <LinkContainer to="/trust-anchor">
                                     <Dropdown.Item className="item">{navText[2]['dropItem'][0]}</Dropdown.Item>
+                                </LinkContainer>
                                     <Dropdown.Item className="item">{navText[2]['dropItem'][1]}</Dropdown.Item>
                                 </Dropdown.Menu>
                             </Dropdown>

@@ -81,7 +81,7 @@ class DappList extends React.Component{
                     <img className="storeImage" src={require('../images/DappList/thirdApp6.png')} alt="thirdApp6" />
                   </div>
                 </div>
-                <Footer lang={this.props.lang} />
+                {/*<Footer lang={this.props.lang} />*/}
             </div>
         );
     }
