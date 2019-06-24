@@ -48,7 +48,6 @@ class Explorer extends React.Component {
     }
     blockData() {
         if (this._blockState) {
-            //console.log(new Date())
             let setTime = new Date();
             let strTime = setTime.toString().split(' ');
             let blockTime = strTime[3] + '-' + setTime.getMonth() + '-' + strTime[2] + ' ' + strTime[4];
@@ -91,11 +90,6 @@ class Explorer extends React.Component {
             svgHeight: size['height']
         });
         setTimeout(() => this.drawChart(), 1);
-        /*setTimeout(()=>{
-            console.log('width: '+this.state.svgWidth);
-            console.log('height: '+this.state.svgHeight);
-            console.log(size);
-        },1);*/
     }
     drawChart() {
         let svgData = database.slice(0, 79);

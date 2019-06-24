@@ -185,7 +185,9 @@ class NavbarS extends React.Component{
                                 <LinkContainer to="/trust-anchor">
                                     <Dropdown.Item className="item">{navText[2]['dropItem'][0]}</Dropdown.Item>
                                 </LinkContainer>
+                                <LinkContainer to="/nodeslist">
                                     <Dropdown.Item className="item">{navText[2]['dropItem'][1]}</Dropdown.Item>
+                                </LinkContainer>
                                 </Dropdown.Menu>
                             </Dropdown>
                             <Dropdown id='dropdown4' onClick={this.iconRotate} onToggle={this.textToggle} onMouseEnter={this.mouEnter}  onMouseLeave={this.mouLea} className="dropdown" as={NavItem}>
@@ -193,8 +195,12 @@ class NavbarS extends React.Component{
                                     <FontAwesomeIcon id='icon4' className="navIcon" icon="angle-down" size="lg"/>
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu className="dropMenu">
-                                    <Dropdown.Item className="item">{navText[3]['dropItem'][0]}</Dropdown.Item>
-                                    <Dropdown.Item className="item">{navText[3]['dropItem'][1]}</Dropdown.Item>
+                                    <LinkContainer to="/aboutus">
+                                        <Dropdown.Item className="item">{navText[3]['dropItem'][0]}</Dropdown.Item>
+                                    </LinkContainer>
+                                    <LinkContainer to="/contactus">
+                                        <Dropdown.Item className="item">{navText[3]['dropItem'][1]}</Dropdown.Item>
+                                    </LinkContainer>
                                 </Dropdown.Menu>
                             </Dropdown>
                             <Dropdown onToggle={this.langClick} id="langDrop" as={NavItem}>

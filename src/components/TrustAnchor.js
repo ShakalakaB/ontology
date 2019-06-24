@@ -25,6 +25,23 @@ class TrustAnchor extends React.Component{
                     <img className="bottomImage" id="image1" src={require("../images/TrustAnchor/bannerBottom1.png")} alt="background image"></img>
                     <img className="bottomImage" id="image2" src={require("../images/TrustAnchor/bannerBottom2.png")} alt="background image"></img>
                 </div>
+                <div id="midBanner">
+                    {/*<div id="anchorInfoWrap">*/}
+                        <div className="anchorInfo">
+                            <div className="num">5</div>
+                            <div className="infoText">{this.props.lang?'信任锚':'Trust Anchors'}</div>
+                        </div>
+                        <div className="anchorInfo">
+                            <div className="num">6</div>
+                            <div className="infoText">{this.props.lang?'认证文件类型':'Types of Identify Documents'}</div>
+                        </div>
+                        <div className="anchorInfo">
+                            <div className="num">218</div>
+                            <div className="infoText">{this.props.lang?'国家及地区':'Countries and regions around the world'}</div>
+                        </div>
+                    {/*</div>*/}
+                    <img id="midBackImage" src={require("../images/TrustAnchor/map.png")} alt="background image map" ></img>
+                </div>
             </div>
         );
     }

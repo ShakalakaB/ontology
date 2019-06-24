@@ -19,6 +19,8 @@ React.createRef() https://reactjs.org/docs/refs-and-the-dom.html
 + Navbar collapse, how rotate angle arrow once clicked
 + set transform through react js, would crush with css transform
 + Problem: dropdown menu item color when clicked
++ dropdown menu shoulf collapse after item clicked
++ in xs, hamburger position
 
 **Homepage**
 reports

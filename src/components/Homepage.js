@@ -31,7 +31,7 @@ class Homepage extends React.Component{
             introText2:false,
             introText3:false,
         }
-        this.handleClick=this.handleClick.bind(this);
+        //this.handleClick=this.handleClick.bind(this);
         this.handleScroll=this.handleScroll.bind(this);
         this.slideUp=this.slideUp.bind(this);
         this.headerRef=React.createRef();
@@ -83,11 +83,11 @@ class Homepage extends React.Component{
             });
         }
     }
-    handleClick(){
+    /*handleClick(){
         this.setState({
             hearderText1:!this.state.hearderText1
         });
-    }
+    }*/
     render(){
         return(
             <div id="homepage">

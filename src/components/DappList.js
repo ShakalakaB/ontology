@@ -4,7 +4,6 @@ import BootstrapTable from 'react-bootstrap-table-next';
 import TableHeaderColumn  from 'react-bootstrap-table-next';
 import paginationFactory from 'react-bootstrap-table2-paginator';
 import {dAppdata} from "../constants";
-import Footer from './Footer';
 
 const dAppCol = {
     "chinese":[{

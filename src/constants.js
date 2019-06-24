@@ -674,3 +674,180 @@ export const trustAnchorImages=[
   require("./images/TrustAnchor/logo4.png"),
   require("./images/TrustAnchor/logo5.png")
 ];
+export const nodesTab1=[{
+  url:"https://i.postimg.cc/BnNRNpMt/Wechat-IMG293.png",
+  asia:'Asia1',
+  name:'Gravity Lichang',
+  des:'The LiChang is the latest heavyweight product created by the core team of EOS Gravity, the largest EOS community in the past. The community platform had an sophisticate contribution for "mining" reward mechanism and UGC (user-generated contribution) features. The number of fans for Gravity has exceeded 200,000, and the number of registered users of the Lichang has exceeded 50,000.',
+  address:'ALBUDPW2Jhp1YdFDPpkaC3duvVaCVQ83Zm',
+  ont:'550,000 ONT'
+},{
+  url:"https://i.postimg.cc/Gp0wWPvn/20190409180943.jpg",
+  asia:'Asia1',
+  name:'sesameseed',
+  des:'Sesameseed is a blockchain community, created to support its members and developers by providing fair and transparent representation in delegated governance. SEED is a multi-chain, community participation token, encouraging participation through its creation and distribution.',
+  address:'AKxvT43s2QPUqNv9MGnYr3ThhGP1PEUhgA',
+  ont:'450,000 ONT'
+}];
+export const nodesTab2=[{
+  url:"https://i.postimg.cc/wMb3Zgb9/dappbirds.png",
+  asia:'Asia',
+  name:'DAppbirds',
+  des:'DAppBirds is a domestic DApp navigator with high reputation in DApp data analysis service for 7 main public chains over 3000 DApps and serve DApp users from home and abroad through multilingual support including Chinese, English and Korean. According to the MAU between 50,000 to 70,000, DAppBirds keeps sharp record and real-time supervision upon DApp data.',
+  address:'ANjcr5MimVyXhKVeVYfkyLmnw5hkQiT62z',
+  ont:'400,000 ONT'
+},{
+  url:"https://i.postimg.cc/0NsJ7wLC/logo3.png",
+  asia:'Asia1',
+  name:'BlockData ( media co-builder node )',
+  des:'BlockData，the leading brand in blockchain research and professional services, is a global blockchain data and analysis service provider. BlockData has three major businesses: BlockData Data Platform, BlockData Think Tank, and BlockData Rating, each providing the most complete blockchain data, authoritative blockchain research reports, and professional digital economic rating respectively',
+  address:'AT6FszytBPMwL4AkMmP5Vs3LhszWk196Au',
+  ont:'330,000 ONT'
+},{
+  url:"https://i.postimg.cc/kGQ0scYd/10711554714751-pic-hd.jpg",
+  asia:'Asia',
+  name:'Bitwires ( media co-builder node )',
+  des:'Bitwires is currently the China\'s largest blockchain media platform in terms of user traffic! With over 1000 projects and 700 media partners signed on to our platform, Bitwires has reached 2 Million downloads ，its API cooperates with 50 high-traffic apps, covering over 7 Million users.',
+  address:'AeSUU5HDsuRoowV5UUnZWy6WTNH3VZTnxv',
+  ont:'210,000 ONT'
+}];
+export const nodesTab3=[{
+  url:"https://i.postimg.cc/0jnCnRvh/Blocks-tech-logo.png",
+  asia:'Asia1',
+  name:'Blocks.tech ( media co-builder node )',
+  des:'Blocks.tech is an emerging provider of FinTech and blockchain information and data services. We have a team of professional information and data processing experts, located in Beijing, Shanghai and San Francisco.',
+  address:'AHnyNzudjtZPeh3LLyRCPfnw9q1MCAHEEr',
+  ont:'210,000 ONT'
+}];
+export const aboutTeam=[{
+  'chinese':{
+    'title':'关于本体',
+    'detail':'本体是新一代公有基础链项目 & 分布式信任协作平台。本体提供新一代高性能基础公有链，包括完整的分布式账本、智能合约体系支持。同时本体架构支持公有链网体系，除了提供基础公有链服务，通过本体区块链框架支持不同应用的公有链定制，并通过不同协议群支持链网协作。'
+  },
+  'english':{
+    'title':'About Ontology',
+    'detail':'Ontology is a new high-performance public blockchain project & a distributed trust collaboration platform. Ontology blockchain framework supports public blockchain systems and is able to customize public blockchains for applications. Ontology also supports collaboration among chain networks with protocol groups.'
+  }
+},{
+  'chinese':{
+    'title':'核心团队',
+    'detail':'目前，本体团队已拥有近百名核心成员，包含多位在区块链领域拥有丰富经验的研究专家与开发人员，他们毕业于清华大学、北京大学、约翰霍普金斯大学、利兹大学、谢菲尔德大学、曼切斯特大学等著名高校，曾在IBM、思科、EMC等跨国企业及大型金融机构等中积累了丰富经验。'
+  },
+  'english':{
+    'title':'The Core Team',
+    'detail':'Ontology\'s core team is composed of experts in blockchain technology, distributed application development, product management and design, marketing and business development, and experts and architects from global financial institutions.'
+  }
+}];
+export const aboutUsMid={
+  'chinese':[
+    {'num':'200+','team':'核心团队成员'},
+    {'num':'190+','team':'共建者团队'},
+    {'num':'2,000,000+','team':'社区伙伴'},
+    {'num':'900+','team':'技术贡献者'}
+  ],
+'english':[
+  {'num':'200+','team':'Core Team Members'},
+  {'num':'190+','team':'Teams of Partners'},
+  {'num':'2,000,000+','team':'Community Contributors'},
+  {'num':'900+','team':'Technical Contributors'}
+]};
+export const aboutMiilstone={
+  'chinese':[
+    {'date':'27/12/2017','event':'成为全球首个加入DIF的中国公有链项目'},
+    {'date':'20/04/2018','event':'共识机制VBFT发布'},
+    {'date':'20/05/2018','event':'本体北斗共识集群经济模型公布'},
+    {'date':'02/07/2018','event':'本体官方客户端ONTO正式上线'},
+    {'date':'22/08/2018','event':'ONT DID被纳入W3C，与比特币和以太坊成为规范组中的三家公链代表'},
+    {'date':'09/12/2018','event':'与微软联合举办首场东京黑客马拉松'},
+    {'date':'28/12/2018','event':'本体分片设计发布'},
+    {'date':'22/02/2019','event':'本体开发平台正式登陆Google云商店'},
+    {'date':'16/05/2019','event':'本体跨链设计重磅发布'},
+    {'date':'21/05/2019','event':'本体Wasm测试网发布'},
+    {'date':'23/05/2019','event':'本体发布全球首个跨链测试网'},
+  ],
+  'english':[
+    {'date':'27/12/2017','event':'Joined the DIF as the first China-based blockchain project'},
+    {'date':'20/04/2018','event':'VBFT consensus algorithm released'},
+    {'date':'20/05/2018','event':'Consensus economic model announced'},
+    {'date':'02/07/2018','event':'ONTO app released'},
+    {'date':'22/08/2018','event':'ONT DID added to the W3C-CCG DID Method Registry'},
+    {'date':'09/12/2018','event':'Ontology chosen to be part of Microsoft Accelerator'},
+    {'date':'28/12/2018','event':'Ontology sharding design announced'},
+    {'date':'22/02/2019','event':'Ontology Development Platform is added to Google Cloud Platform Marketplace'},
+    {'date':'16/05/2019','event':'Ontology multichain design released'},
+    {'date':'21/05/2019','event':'Ontology WASM TestNet released  '},
+    {'date':'23/05/2019','event':'Ontology multichain TestNet released'},
+  ],
+}
+export const aboutRoadmap=[{
+  'year':'2019 Q1',
+  'chinese':'测试网同构多链(WASM, MPT)',
+  'english':'Cross-chain on TestNet (WASM, MPT, TEE)'
+},{
+  'chinese':'WASM-VM优化，支持C/C++ ',
+  'english':'WASM-VM optimization (C/C++) WASM-VM'
+},{
+  'chinese':'经济模型更新（手续费分成）',
+  'english':'Node incentive model: dApp gas fee sharing'
+},{
+  'chinese':'多层分片POC',
+  'english':'Multi-layer sharding POC'
+},{
+  'chinese':'模块持续优化，测试网部署',
+  'english':'Module optimization on TestNet'
+},{
+  'year':'2019 Q2',
+  'chinese':'多层分片（测试网）',
+  'english':'Multi-layer sharding on TestNet'
+},{
+  'chinese':'链上链下混合存储解决方案',
+  'english':'Hybrid storage solution'
+},{
+  'year':'2019 Q3',
+  'chinese':'多层分片（主网）',
+  'english':'Multi-layer sharding'
+},{
+  'chinese':'多层多链商务生态',
+  'english':'Multi-layer, multi-chain business ecosystem'
+},{
+  'year':'2019 Q4',
+  'chinese':'多层多链商务解决方案',
+  'english':'Multi-layer, multi-chain business solution'
+},{
+  'chinese':'跨异构链POC',
+  'english':'Heterogeneous cross-chain POC'
+},{
+  'year':'2020',
+  'chinese':'构建下一代可信互联网',
+  'english':'Expanding the blockchain ecosystem'
+}
+];
+export const aboutMembers=[{
+  'chinese':{'name':'李俊','title':'创始人'},
+  'english':{'name':'Li Jun','title':'Founder'},
+  'photo':require("./images/AboutUs/member1.png"),
+},{
+  'chinese':{'name':'季宙栋 ','title':'联合创始人'},
+  'english':{'name':'Andy Ji ','title':'Co-founder'},
+  'photo':require("./images/AboutUs/member2.png"),
+},{
+  'chinese':{'name':'胡凝','title':'资深架构专家'},
+  'english':{'name':'Hu Ning','title':'Senior Protocol Architect'},
+  'photo':require("./images/AboutUs/member3.png"),
+},{
+  'chinese':{'name':'丛宏雷','title':'资深架构专家'},
+  'english':{'name':'Cong Honglei','title':'Senior Blockchain Expert'},
+  'photo':require("./images/AboutUs/member4.png"),
+},{
+  'chinese':{'name':'毛贤平','title':'本体研究院院长'},
+  'english':{'name':'Mao Xianping','title':'Dean of the Ontology Research Institute'},
+  'photo':require("./images/AboutUs/member5.png"),
+},{
+  'chinese':{'name':'Mathias Glintborg','title':'高级顾问'},
+  'english':{'name':'Mathias Glintborg','title':'Senior Advisor'},
+  'photo':require("./images/AboutUs/member6.png"),
+},{
+  'chinese':{'name':'Daniel Assab','title':'海外运营'},
+  'english':{'name':'Daniel Assab','title':'Overseas Marketing'},
+  'photo':require("./images/AboutUs/member7.png"),
+}]

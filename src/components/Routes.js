@@ -2,13 +2,14 @@ import React from 'react';
 import {Switch, Route} from 'react-router-dom';
 import Homepage from './Homepage';
 import DappList from './DappList';
-//import Explorer from './Explorer';
-//import Block from './Explorer';
 import {Explorer,Block} from './Explorer';
 import Bounty from './Bounty';
 import SubmitBounty from './SubmitBounty';
 import SubmitApp from './SubmitApp';
 import TrustAnchor from './TrustAnchor';
+import NodesList from './NodesList';
+import AboutUs from './AboutUs';
+import ContactUs from './ContactUs';
 import Test from './Test';
 /*import Home from './Home';
 import Category from './Category';
@@ -34,6 +35,12 @@ class Routes extends React.Component{
                         render={(props)=><SubmitApp {...props} lang={this.props.lang}></SubmitApp>} />
                     <Route path='/trust-anchor' 
                         render={(props)=><TrustAnchor {...props} lang={this.props.lang}></TrustAnchor>} />
+                    <Route path='/nodeslist' 
+                        render={(props)=><NodesList {...props} lang={this.props.lang}></NodesList>} />
+                    <Route path='/aboutus' 
+                        render={(props)=><AboutUs {...props} lang={this.props.lang}></AboutUs>} />                        
+                    <Route path='/contactus' 
+                        render={(props)=><ContactUs {...props} lang={this.props.lang}></ContactUs>} />
                     {/*<Route path='/bounty' 
                         render={(props)=><Bounty {...props} lang={this.props.lang}></Bounty>} />
                     <Route render={(props)=><Homepage {...props} lang={this.props.lang} langCho={this.props.onClick}></Homepage>} />

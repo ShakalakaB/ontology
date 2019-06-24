@@ -1,0 +1,103 @@
+@import "../node_modules/bootstrap/scss/_functions.scss";
+@import "../node_modules/bootstrap/scss/_variables.scss";
+@import "../node_modules/bootstrap/scss/mixins/_breakpoints.scss";
+
+@include media-breakpoint-up(lg){
+    #contactUs{
+        #title{
+            font-size: 1.5em;
+        }
+        form{
+            .inputGrid{
+                display: grid;
+                grid-template-rows: auto auto;
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    }
+}
+@include media-breakpoint-down(md){
+    #contactUs{
+        #title{
+            font-size: 1.5em;
+            padding-right: 1em;
+            word-wrap:break-word;
+            word-break: break-all;
+        }
+        form{
+            .inputGrid{
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    }
+}
+@include media-breakpoint-down(sm){
+    #contactUs{
+        #title{
+            font-size: 1em;
+        }
+    }
+}
+@include media-breakpoint-down(xs){}
+#contactUs{
+    padding-top:6em;
+    padding-bottom: 2em;
+    #title{
+        font-weight: 700;
+        max-width:22em;
+        padding-left: 1em;
+        line-height: 160%;
+        color:#02101c;
+        border-left: 4px solid #469fdb;
+        margin:0 auto 2em auto;
+    }
+    form{
+        max-width: 800px;
+        padding:0 0.5em 0 0.5em;
+        margin:0 auto 0 auto;
+        //border:2px solid black;
+        .inputBox{
+            margin-bottom: 1.5em;
+            .inputTitle{
+                font-size:0.9em;
+                margin-bottom: 0.5em;
+            }
+            .input, .xlInput{
+                padding:0.3em 0.5em 0.3em 0.5em;
+                border-style:solid;
+                box-sizing: border-box;
+                width:100%;
+                border:1.1px solid #aab3b4;
+                box-shadow:0 0 0 transparent;
+                border-radius: 5px;
+                -webkit-appearance:none;
+                outline:0;
+                &::placeholder{
+                    color:#aab3b4;
+                    font-size:0.8em;
+                }
+            }
+            .input{
+                height:1.7em;
+                max-width:17em;
+            }
+            .xlInput{
+                max-width:37em;
+                height:8em;
+                //border:2px solid green;
+            }
+        }
+        #send{
+            display: block;
+            width:5em;
+            height:1.8em;
+            margin:0 auto 0 auto;
+            border-radius: 5px;
+            border-style:solid;
+            border:2px solid #f9e14e;
+            background-color:#f9e14e;
+            //color:white;
+        }
+    }
+}
