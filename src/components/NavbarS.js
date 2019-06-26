@@ -18,15 +18,18 @@ class NavbarS extends React.Component{
             navToggle:false,
             navStyle:{},
             textToggle:false,
-            textStyle:{}
+            textStyle:{},
+            navCollapse:false,
         }
         this.langClick=this.langClick.bind(this);
-        this.navToggleClick=this.navToggleClick.bind(this);
+        this.navToggle=this.navToggle.bind(this);
         this.viewWidth = this.viewWidth.bind(this);
         this.textToggle=this.textToggle.bind(this);
         this.iconRotate=this.iconRotate.bind(this);
         this.mouEnter=this.mouEnter.bind(this);
         this.mouLea=this.mouLea.bind(this);
+        this.navItemSelect=this.navItemSelect.bind(this);
+        this.handleSelect=this.handleSelect.bind(this);
     }
     componentDidMount() {
         this.viewWidth();
@@ -44,10 +47,13 @@ class NavbarS extends React.Component{
             clickSty:style
         });
     }
-    navToggleClick(){
+    navToggle(){
         let style;
+        this.setState({
+            navCollapse:!this.state.navCollapse
+        });
         if (!this.state.navToggle){
-            style={backgroundColor:navTogBackground,overflow:`hidden`};
+            style={backgroundColor:navTogBackground,overflow:`hidden`,zIndex:`-1`};
             document.body.style.overflow='hidden';
         }else{
             style={};
@@ -133,20 +139,28 @@ class NavbarS extends React.Component{
             icon.style.transition="all 0.1s";
         }
     }
+    navItemSelect(){
+        if(window.innerWidth<mdBreakpoint){
+            this.navToggle();
+        }
+    }
+    handleSelect(){
+        console.log("inside handleSelect");
+    }
     render(){
         let navText=(this.props.lang)?navContent['chinese']:navContent['english'];
         return(
             <div id="navWrap">
-                <Navbar id="nav" expand="lg" style={this.state.navStyle}>
+                <Navbar id="nav" expand="lg" onToggle={this.navToggle} onSelect={this.navItemSelect} expanded={this.state.navCollapse} style={this.state.navStyle}>
                     <Navbar.Brand>
                         <Link to="/">
                             <img id="logo" src={require("../images/logos.png")} alt="Ontology logo" />
                         </Link>
                     </Navbar.Brand>
-                    <Navbar.Toggle id="toggle" onClick={this.navToggleClick}>
+                    <Navbar.Toggle id="toggle">
                         {this.state.navToggle?(
                             <FontAwesomeIcon id="times" icon="times" size="lg" color="white" />
-                        ):(<FontAwesomeIcon id="bars" icon="bars" size="sm"/>
+                        ):(<FontAwesomeIcon id="bars" icon="bars" size="lg"/>
                         )}
                     </Navbar.Toggle>
                     <Navbar.Collapse id="navLinks">
@@ -208,8 +222,8 @@ class NavbarS extends React.Component{
                                     <FontAwesomeIcon style={this.state.clickSty['rotate']} id="langIcon" icon="angle-down" size="sm"/>
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu style={this.state.clickSty['menu']} id="langMenu">
-                                    <Dropdown.Item className="langItem" id="chinese" onClick={this.props.onClick}>中文</Dropdown.Item>
-                                    <Dropdown.Item className="langItem" id="english" onClick={this.props.onClick}>English</Dropdown.Item>
+                                    <Dropdown.Item className="langItem" id="chinese" onSelect={this.props.onClick}>中文</Dropdown.Item>
+                                    <Dropdown.Item className="langItem" id="english" onSelect={this.props.onClick}>English</Dropdown.Item>
                                 </Dropdown.Menu>
                             </Dropdown>
                         </Nav>

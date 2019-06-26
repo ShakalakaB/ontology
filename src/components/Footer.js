@@ -1,5 +1,6 @@
 import React from 'react';
 import {Collapse,Dropdown} from 'react-bootstrap';
+import {LinkContainer} from 'react-router-bootstrap';
 import {navContent,mdBreakpoint} from '../constants';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '../fontsawesome';
@@ -119,8 +120,12 @@ class Footer extends React.Component{
                             </div>
                             <Collapse in={this.state.item1}>
                                 <div id="item1_Text" className="itemText">
-                                    <div>{navText[0]['dropItem'][0]}</div>
-                                    <div>{navText[0]['dropItem'][1]}</div>
+                                    <LinkContainer to="/bounty">
+                                        <div>{navText[0]['dropItem'][0]}</div>
+                                    </LinkContainer>
+                                    <LinkContainer to="/explorer">
+                                        <div>{navText[0]['dropItem'][1]}</div>
+                                    </LinkContainer>
                                 </div>
                             </Collapse>
                         </div>
@@ -131,8 +136,12 @@ class Footer extends React.Component{
                             </div>
                             <Collapse in={this.state.item2}>
                                 <div id="item2_Text" className="itemText">
-                                    <div>{navText[1]['dropItem'][0]}</div>
-                                    <div>{navText[1]['dropItem'][1]}</div>
+                                    <LinkContainer to="/dapplist">
+                                        <div>{navText[1]['dropItem'][0]}</div>
+                                    </LinkContainer>
+                                    <LinkContainer to="/submit_dapp">
+                                        <div>{navText[1]['dropItem'][1]}</div>
+                                    </LinkContainer>
                                 </div>
                             </Collapse>
                         </div>
@@ -143,8 +152,12 @@ class Footer extends React.Component{
                             </div>
                             <Collapse in={this.state.item3}>
                                 <div id="item3_Text" className="itemText">
-                                    <div>{navText[2]['dropItem'][0]}</div>
-                                    <div>{navText[2]['dropItem'][1]}</div>
+                                    <LinkContainer to="/trust-anchor">
+                                        <div>{navText[2]['dropItem'][0]}</div>
+                                    </LinkContainer>
+                                    <LinkContainer to="/nodeslist">
+                                        <div>{navText[2]['dropItem'][1]}</div>
+                                    </LinkContainer>
                                 </div>
                             </Collapse>
                         </div>
@@ -155,8 +168,12 @@ class Footer extends React.Component{
                             </div>
                             <Collapse in={this.state.item4}>
                                 <div id="item4_Text" className="itemText">
-                                    <div>{navText[3]['dropItem'][0]}</div>
-                                    <div>{navText[3]['dropItem'][1]}</div>
+                                    <LinkContainer to="/aboutus">
+                                        <div>{navText[3]['dropItem'][0]}</div>
+                                    </LinkContainer>
+                                    <LinkContainer to="/contactus">
+                                        <div>{navText[3]['dropItem'][1]}</div>
+                                    </LinkContainer>
                                 </div>
                             </Collapse>
                         </div>
@@ -168,8 +185,8 @@ class Footer extends React.Component{
                                 <FontAwesomeIcon style={this.state.langIconSty} id="langIcon" icon="angle-down" size="lg" />
                             </Dropdown.Toggle>
                             <Dropdown.Menu id="langMenu">
-                                <Dropdown.Item className="langItem" id="chinese" onClick={this.props.onClick}>中文</Dropdown.Item>
-                                <Dropdown.Item className="langItem" id="english" onClick={this.props.onClick}>English</Dropdown.Item>
+                                <Dropdown.Item className="langItem" id="chinese" onSelect={this.props.onClick}>中文</Dropdown.Item>
+                                <Dropdown.Item className="langItem" id="english" onSelect={this.props.onClick}>English</Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown>
                     </div>

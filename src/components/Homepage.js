@@ -1,7 +1,7 @@
 import React from 'react';
 import {Carousel} from 'react-bootstrap';
 import styled,{ keyframes } from "styled-components";
-
+import {Link} from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '../fontsawesome';
 let slideKey=keyframes`
@@ -100,7 +100,9 @@ class Homepage extends React.Component{
                         <NoSlideUp id="headerText1" ref={this.headerRef}>Ready for all Businesses</NoSlideUp>
                     )}
                     <div id="headerText2">{this.props.lang?'本体是新一代公有基础链项目和分布式信任协作平台。':'Ontology is a high-performance public blockchain project and a distributed trust collaboration platform.'}</div>
-                    <button id="headerLink">{this.props.lang?'了解更多':'Learn More'}</button>
+                    <Link to="/aboutus">
+                        <button id="headerLink">{this.props.lang?'了解更多':'Learn More'}</button>
+                    </Link>
                     {/*<img src={require("../images/Home.jpg")} alt="homeBackground"></img>*/}
                 </div>
                 <div id="newsWrap">

@@ -73,6 +73,7 @@
     }
     #partner{
         #partnerCar{
+            height:16em;
             .partnerItem{
                 height:12em;
                 padding-left:5em;
@@ -180,6 +181,7 @@
     }
     #partner{
         #partnerCar{
+            height:16em;
             .partnerItem{
                 height:auto;
                 padding-left:1em;
@@ -309,6 +311,7 @@
     }
     #partner{
         #partnerCar{
+            height:20em;
             .partnerItem{
                 height:auto;
                 padding-left:1em;
@@ -387,19 +390,6 @@
         border:none;
         border-radius: 5px;
     }
-    //#headerText1,#headerText2,#headerLink{
-    /*#headerText1{
-        animation:slideUp 2s ease forwards;
-        -webkit-animation:slideUp 2s ease forwards;
-    }
-    @keyframes slideUp{
-        from{transform:translateY(100px)}
-        to{transform:translateY(0)}
-    }
-    @-webkit-keyframes slideUp{
-        from{transform:translateY(100px)}
-        to{transform:translateY(0)}
-    }*/
     #homeImage{
         position: absolute;
         top:0;
@@ -412,7 +402,7 @@
 #newsWrap{
     position: relative;
     top:-2.5em;
-    z-index: 2;
+    z-index: 1;
     width:100%;
     //border:2px solid purple;
     #newsTop{

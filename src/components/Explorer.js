@@ -169,7 +169,6 @@ class Explorer extends React.Component {
                         {blockList}
                     </div>
                 </div>
-                {/*<Footer />*/}
             </div>
         );
     }

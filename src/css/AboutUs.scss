@@ -384,16 +384,22 @@
                 display:grid;
                 grid-template-rows: auto auto auto auto;
                 grid-template-columns: auto ;
-                //align-items: center;
+                align-items: flex-start;
+                justify-content: center;
                 .textBlo{
-                    padding:1em 1em 0 1em;
+                    padding:0  1em 0.8em 1em;
+                    //border:2px solid black;
                     .num{
+                        height:1.4em;
+                        text-align: center;
                         padding:0;
-                        font-size:1em;
+                        font-size:2em;
+                        //border:2px solid black;
                     }
                     .note{
                         width:auto;
-                        font-size:0.7em;
+                        font-size:0.8em;
+                        //border:2px solid black;
                     }
                 }
             }

@@ -25,9 +25,6 @@
             div{
                 a{
                     pointer-events: auto;
-                    .sliderImage{
-                        filter:blur(0px);
-                    }
                 }
             }
         }
@@ -141,7 +138,7 @@
             justify-content: center;
             align-items: center;
             .storeImage{
-                width:10em;
+                //width:10em;
                 height:auto;
             }
         }
@@ -165,9 +162,10 @@
             grid-row-gap:1em;
             justify-content: center;
             align-items: center;
+            //border:2px solid black;
             .storeImage{
-                width:10em;
-                height:auto;
+                max-width:100%;
+                //border:2px solid black;
             }
         }
     }
@@ -195,25 +193,12 @@
                     .sliderImage{
                         width:100%;
                         height:100%;
-                        filter:blur(1px);
+                        //filter:blur(1px);
                     }
                 }
                 
             }
         }
-        /*.slick-active{
-            height:12em;
-            margin-top:0;
-            margin-bottom:0;
-            div{
-                a{
-                    pointer-events: auto;
-                    .sliderImage{
-                        filter:blur(0px);
-                    }
-                }
-            }
-        }*/
         .slick-prev, .slick-next{
             width:40px;
             height:40px;
@@ -414,7 +399,7 @@
     }
     #appStore{
         width:100%;
-        padding:0 1em 1em 2em;
+        padding:0 1em 2em 1em;
         margin:2em 0 2em 0;
         background-color:#ffffff;
         #storeTitle{

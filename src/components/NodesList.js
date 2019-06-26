@@ -10,8 +10,13 @@ class NodesList extends React.Component{
         }
         this.tabClick=this.tabClick.bind(this);
     }
+    componentDidMount(){
+        document.getElementById('tab'+1).style.backgroundColor=`#edf8ff`;
+    }
     tabClick(event){
+        //console.log(event.target.className);
         let tabID=event.target.className.match(/[\d]/)[0];
+        console.log(tabID);
         this.setState({
             tabChoosen:tabID
         });
@@ -33,7 +38,7 @@ class NodesList extends React.Component{
         };}
         let nodesList=nodesData().map((e,i)=>{
         return(
-            <div key={i} className="node">
+            <div key={"node"+i} className="node">
                 <div className="brief">
                     <div className="nodeImage">
                         <img src={e['url']} alt="node image"></img>
@@ -64,11 +69,11 @@ class NodesList extends React.Component{
                             <div className="dot tab1">●</div>
                             <div className="tabText tab1">{this.props.lang?'节点':'Node'}</div>
                         </div>
-                        <div id="tab2" className="tab tab1" onClick={this.tabClick}>
+                        <div id="tab2" className="tab tab2" onClick={this.tabClick}>
                             <div className="dot tab2">●</div>
                             <div className="tabText tab2"> {this.props.lang?'共建节点':'Co-build Node'}</div>
                         </div>
-                        <div id="tab3" className="tab tab1" onClick={this.tabClick}>
+                        <div id="tab3" className="tab tab3" onClick={this.tabClick}>
                             <div className="dot tab3">●</div>
                             <div className="tabText tab3">{this.props.lang?'进行中':'In Process'}</div>
                         </div>

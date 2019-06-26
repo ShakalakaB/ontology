@@ -6,9 +6,9 @@ class TrustAnchor extends React.Component{
         super(props);
     }
     render(){
-        const images=trustAnchorImages.map(e=>{
+        const images=trustAnchorImages.map((e,i)=>{
             return(
-                <img className="image" src={e} alt="trust anchor image" />
+                <img key={"image"+i} className="image" src={e} alt="trust anchor image" />
             )
         });
         return(
