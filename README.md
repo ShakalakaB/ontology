@@ -1,5 +1,6 @@
 # ontology
 Practice project. Example:https://ont.io/home
+Project url: https://shakalakab.github.io/ontology/#/
 
 load speed
 store user's choice of lang
